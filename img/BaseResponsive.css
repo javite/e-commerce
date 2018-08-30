@@ -1,0 +1,162 @@
+* {
+  box-sizing: border-box;
+}
+body {
+  background-color: #FBEEE6;
+}
+header {
+  background-size: 100%;
+  height: auto;
+  margin: 0 auto;
+
+  border:0px;
+  border-style:solid;
+}
+
+
+/*Ahora viene el Section*/
+
+
+
+/***********************
+ * Div de laderecha
+ ***********************/
+div.buscador {
+  width: 100%;
+  margin: 0 auto;
+  overflow: hidden;
+
+}
+
+/***********************
+ * Estructura del Buscador
+ ***********************/
+ div.buscadorWrapper {
+   float: left;
+   background-color: blue;
+   text-align: center;
+ 	width: 94%;
+ 	max-width: 94%;
+ 	height: 2.5em;
+ 	overflow: hidden;
+ 	background: transparent;
+ 	margin: 0 auto;
+ 	position: static;
+  top: 0px;
+ }
+
+ div.compra {
+   width: 6%;
+   float: left;
+
+ }
+ .compra a img{
+   float:right;
+  margin-right: auto;
+   border-radius: 80%;
+   height: 2.5em;
+ }
+
+ .buscadorForm {
+ text-align: center;
+ width:79%;
+ margin: 0 auto;
+ position: fixed;
+ top: 0px;
+ float:left;
+}
+
+
+ .buscadorinputwrapper {
+ /*	padding: 0 36px 0 0;*/ /* Right padding for submit button width */
+ 	overflow: hidden;
+ }
+
+ .buscadorInput {
+   width: 100%;
+ }
+
+ /***********************
+  * Configuración de Estilos *
+  ***********************/
+ /*.buscador {
+   padding: 0 25px 0 200px;
+ }*/
+
+ .buscadorInput {
+  -webkit-box-sizing: content-box;
+ -moz-box-sizing: content-box;
+ box-sizing: content-box;
+   height: auto;
+   padding: 0 4% 0px;
+ border-color: #888;
+  border-radius: 35px; /* (height/2) + border-width */
+  border-style: solid;
+ border-width: 3px;
+  margin-top: 10px;
+  color: #333;
+  font-family: 'Helvetica', sans-serif;
+ font-size: x-large;
+ /*-webkit-appearance: none;*/
+ /*-moz-appearance: none;*/
+}
+
+.buscadorSubmit {
+ position: absolute;
+right: 0.5%;
+top: 3%;
+display: block;
+width: auto%;
+height: 100%;
+ padding: 0;
+ padding-top:0.5%;
+ border: none;
+margin-top: autopx; /* margin-top + border-width */
+
+background: transparent;
+ color: #888;
+ font-family: 'Helvetica', sans-serif;
+ font-size:x-large ;
+ line-height: normal;
+}
+
+.buscadorInput:focus {
+  outline: none;
+  border-color: #333;
+}
+
+.buscadorInput:focus.buscadorSubmit {
+   color: #333;
+}
+
+.buscadorSubmit:hover {
+  color: #333;
+  cursor: pointer;
+}
+
+::-webkit-input-placeholder {
+ color: #888;
+}
+
+input:-moz-placeholder {
+  color: #888
+}
+
+/****************
+ Acá Terminó la barra de busqueda
+ ****************/
+.cabecera {
+  text-align: center;
+
+}
+.cabecera img {
+  width: 22%;
+}
+h2 {
+  text-align: center;
+  color: #34495E;
+  font-style: bold;
+  font-size: xx-large;
+}
+
+/*Ver como armar el campo del precio*/
