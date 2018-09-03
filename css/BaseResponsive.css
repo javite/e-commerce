@@ -3,16 +3,34 @@
 }
 body {
   background-color: #FBEEE6;
+  font-family: sans-serif;
 }
 header {
   background-size: 100%;
   height: auto;
+  width: 90%;
   margin: 0 auto;
-
   border:0px;
   border-style:solid;
 }
 
+section{
+  width: 90%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  margin: 0 auto;
+}
+
+article{
+  width: 48%;
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: aliceblue;
+  margin-bottom: 10px;
+}
 
 /*Ahora viene el Section*/
 
@@ -243,26 +261,25 @@ a {
 }
 
 .datosProducto {
-  overflow: hidden;
+  /*overflow: hidden;*/
   border-style: solid;
+  display: flex;
+  flex-direction: column;
 }
 .descripcion {
   width: 75%;
-  float:left;
+  /*float:left;*/
 }
 
 div.descripcion h2 {
-  top: 0px;
-  text-align: left;
+  /*top: 0px;*/
+  /*text-align: left;*/
   padding: 3px;
-  position:relative;
-  transform: translate(0%, -50%);
+  /*position:relative;*/
+  /*transform: translate(0%, -50%);*/
 }
 
-.precio {
-  width: 23%;
-  float: left;
-}
+
 .valor {
   font-style: bold;
   text-align: center;
@@ -271,6 +288,6 @@ div.descripcion h2 {
 }
 
 h4 {
-   position:relative;
-  transform: translate(2%, -40%);
+  /* position:relative;
+  transform: translate(2%, -40%);*/
   }
