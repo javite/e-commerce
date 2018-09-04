@@ -23,7 +23,7 @@ section{
 }
 
 article{
-  width: 48%;
+  width: 90%;
   display: flex;
   flex-wrap: nowrap;
   flex-direction: column;
@@ -53,7 +53,7 @@ div.buscador {
    float: left;
    background-color: blue;
    text-align: center;
- 	width: 94%;
+ 	width: 90%;
  	max-width: 94%;
  	height: 2.5em;
  	overflow: hidden;
@@ -70,13 +70,13 @@ div.buscador {
  }
  .compra a img{
    float:right;
-  margin-right: auto;
+  margin-right: -5%;
    border-radius: 80%;
    height: 2.5em;
  }
 
  .buscadorForm {
- text-align: center;
+ text-align: left;
  width:79%;
  margin: 0 auto;
  position: fixed;
@@ -88,10 +88,11 @@ div.buscador {
  .buscadorinputwrapper {
  /*	padding: 0 36px 0 0;*/ /* Right padding for submit button width */
  	overflow: hidden;
+  width: 100%;
  }
 
  .buscadorInput {
-   width: 100%;
+   width: 90%;
  }
 
  /***********************
@@ -121,8 +122,8 @@ div.buscador {
 
 .buscadorSubmit {
  position: absolute;
-right: 0.5%;
-top: 3%;
+right: 3%;
+top: 6%;
 display: block;
 width: auto%;
 height: 100%;
@@ -200,7 +201,10 @@ input {
 
 select {
   width: 60%;
+}
 
+.ingreso {
+  text-align: center;
 }
 
 div.filtros {
@@ -244,9 +248,9 @@ div.imagen {
 div.imagen img {
   width: 90%;
 }
-a {
+a.ingreso {
   text-decoration: none;
-  color: white;
+  color: black;
   display: inline-block;
 }
 .zoom {
@@ -264,7 +268,7 @@ a {
   /*overflow: hidden;*/
   border-style: solid;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
 }
 .descripcion {
   width: 75%;
@@ -281,13 +285,38 @@ div.descripcion h2 {
 
 
 .valor {
-  font-style: bold;
   text-align: center;
-  font-family: sans-serif;
-  font-style: italic;
+font-family: sans-serif;
+font-style: italic;
+padding-left: 25%;
 }
 
 h4 {
   /* position:relative;
   transform: translate(2%, -40%);*/
+  padding-left: 3%;
+  }
+
+  @media (min-width: 576px) {
+    section{
+      width: 90%;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+      /*margin: 0 auto;*/
+    }
+
+    article{
+      width: 48%;
+      /*display: flex;*/
+      /*flex-wrap: nowrap;*/
+      flex-direction: column;
+      justify-content: space-between;
+      background-color: aliceblue;
+      margin-bottom: 10px;
+    }
+    .valor {
+padding-left: 0%;
+}
+
   }
