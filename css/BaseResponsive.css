@@ -2,7 +2,7 @@
   box-sizing: border-box;
 }
 body {
-  background-color: #FBEEE6;
+  background-color: #808B96;
   font-family: sans-serif;
 }
 header {
@@ -185,7 +185,7 @@ div.divselec {
 height: auto;
 margin: 0 auto;
 width: 100%;
-  background-color: #EDBB99;
+  background-color: #566573;
   display: flex;
   border-top-style: solid;
   border-top-color: black;
@@ -243,6 +243,7 @@ Arrancan los artículos
 div.imagen {
   width: 100%;
   text-align: center;
+  position: relative;
 }
 
 div.imagen img {
@@ -254,11 +255,14 @@ a.ingreso {
   display: inline-block;
 }
 .zoom {
-  position: relative;
+  text-decoration: none;
+  color: white;
+  position: absolute;
   width: 30%;
   font-size: x-large;
-  left: 35%;
-  background-color: rgba(0,0,0,0.7);
+  bottom: -7%;
+  right: -2%;
+  background-color: rgba(0,0,0,0.5);
   text-align: center;
   transform: translate(-50%, -200%);
   border-radius:5%;
@@ -272,6 +276,8 @@ a.ingreso {
 }
 .descripcion {
   width: 75%;
+  border-right-color: black;
+  border-right-style: solid;
   /*float:left;*/
 }
 
@@ -295,6 +301,11 @@ h4 {
   /* position:relative;
   transform: translate(2%, -40%);*/
   padding-left: 3%;
+  height: 100%;
+  text-decoration: none;
+  font-family: 'Open Sans Condensed', sans-serif;
+  font-style: italic;
+
   }
 
   @media (min-width: 576px) {
@@ -319,4 +330,27 @@ h4 {
 padding-left: 0%;
 }
 
+@media (min-width: 768px) {
+  section{
+    width: 99%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    /*margin: 0 auto;*/
   }
+
+  article{
+    width: 30%;
+    /*display: flex;*/
+    /*flex-wrap: nowrap;*/
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: aliceblue;
+    margin-bottom: 10px;
+  }
+  .valor {
+padding-left: 0%;
+}
+form.categoria {
+    padding-top: 6.5%;
+}
