@@ -31,8 +31,10 @@ ul.registro{
 a.nav{
     text-decoration: none;
     color: white;
-    display: block;
-    line-height: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: center;
 }
 img.logo{
   width: 100px;
@@ -54,7 +56,7 @@ button.botones {
   height: 35px;
   width: 35%;
   border-radius: 8px;
-  background-color: rgb(6, 109, 219);
+  background-color:red;
   color: white;
   border: 0px;
   font-size: 14px;
