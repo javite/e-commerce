@@ -1,29 +1,5 @@
 * {
-<<<<<<< Updated upstream
-  box-sizing: border-box;
-}
-body {
-  background-color: #808B96;
-  font-family: sans-serif;
-}
-header {
-  background-size: 100%;
-  height: auto;
-  width: 90%;
-  margin: 0 auto;
-  border:0px;
-  border-style:solid;
-}
-
-section{
-  width: 90%;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
-  margin: 0 auto;
-=======
     box-sizing: border-box;
->>>>>>> Stashed changes
 }
 
 body {
@@ -189,19 +165,6 @@ input:-moz-placeholder {
  Acá Terminó la barra de busqueda
  ****************/
 
-<<<<<<< Updated upstream
-/*Arranca el section*/
-div.divselec {
-height: auto;
-margin: 0 auto;
-width: 100%;
-  background-color: #566573;
-  display: flex;
-  border-top-style: solid;
-  border-top-color: black;
-  border-bottom-style: solid;
-  border-bottom-color: black;
-=======
 section.divselec {
     height: auto;
     margin: 0 auto;
@@ -213,7 +176,6 @@ section.divselec {
     border-top-color: black;
     border-bottom-style: solid;
     border-bottom-color: black; */
->>>>>>> Stashed changes
 }
 
 input {
@@ -287,16 +249,10 @@ article {
 }
 
 div.imagen {
-<<<<<<< Updated upstream
-  width: 100%;
-  text-align: center;
-  position: relative;
-=======
     width: 100%;
     /* height: 250px; */
     position: relative;
     text-align: center;
->>>>>>> Stashed changes
 }
 
 div.imagen img {
@@ -304,25 +260,6 @@ div.imagen img {
     height: auto;
     /* max-height: 250px; */
 }
-<<<<<<< Updated upstream
-a.ingreso {
-  text-decoration: none;
-  color: black;
-  display: inline-block;
-}
-.zoom {
-  text-decoration: none;
-  color: white;
-  position: absolute;
-  width: 30%;
-  font-size: x-large;
-  bottom: -7%;
-  right: -2%;
-  background-color: rgba(0,0,0,0.5);
-  text-align: center;
-  transform: translate(-50%, -200%);
-  border-radius:5%;
-=======
 
 a.zoom {
     text-decoration: none;
@@ -336,7 +273,6 @@ a.zoom {
     text-align: center;
     /* transform: translate(-50%, -200%); */
     border-radius: 5%;
->>>>>>> Stashed changes
 }
 
 .datosProducto {
@@ -348,15 +284,8 @@ a.zoom {
 }
 
 .descripcion {
-<<<<<<< Updated upstream
-  width: 75%;
-  border-right-color: black;
-  border-right-style: solid;
-  /*float:left;*/
-=======
     width: 75%;
     /*float:left;*/
->>>>>>> Stashed changes
 }
 
 div.descripcion h2 {
@@ -388,24 +317,6 @@ div.descripcion p {
 h4 {
     /* position:relative;
   transform: translate(2%, -40%);*/
-<<<<<<< Updated upstream
-  padding-left: 3%;
-  height: 100%;
-  text-decoration: none;
-  font-family: 'Open Sans Condensed', sans-serif;
-  font-style: italic;
-
-  }
-
-  @media (min-width: 576px) {
-    section{
-      width: 90%;
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: space-around;
-      /*margin: 0 auto;*/
-    }
-=======
     padding-left: 3%;
 }
 
@@ -414,7 +325,6 @@ footer {
     width: 100%;
     background-color: #333;
 }
->>>>>>> Stashed changes
 
 @media (min-width: 576px) {
     section {
@@ -438,32 +348,6 @@ footer {
     }
 }
 
-<<<<<<< Updated upstream
-@media (min-width: 768px) {
-  section{
-    width: 99%;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    /*margin: 0 auto;*/
-  }
-
-  article{
-    width: 30%;
-    /*display: flex;*/
-    /*flex-wrap: nowrap;*/
-    flex-direction: column;
-    justify-content: space-between;
-    background-color: aliceblue;
-    margin-bottom: 10px;
-  }
-  .valor {
-padding-left: 0%;
-}
-form.categoria {
-    padding-top: 6.5%;
-}
-=======
 
 /* .cabecera {
     text-align: center;
@@ -539,4 +423,3 @@ form.categoria {
 /*.buscador {
    padding: 0 25px 0 200px;
  }*/
->>>>>>> Stashed changes
