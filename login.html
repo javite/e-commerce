@@ -9,16 +9,20 @@
 </head>
 
 <body>
-    <nav>
-        
-        <a class="nav" href="homeMobile.html"><img class="logo" src="img/Logo.jpg" alt=""></a>
-        <a class="nav" href="registracion.html">Crear una cuenta</a>
-    </nav>
-
+    <header>
+        <nav class="nav">
+            <img class="logo" src="img/logo.png" alt="">
+            <ul class="login">
+                <li>
+                    <a class="registro" href="registro.html">Crear una cuenta</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
     <section>
         <h1>BIENVENIDO!</h1>
         <h2>Ingresá tus datos</h2>
-        <form class="" action="" method="post">
+        <form class="contenedor-form" action="" method="post">
             <div class="formulario">
                 <label class="formulario" for="email">Email:</label>
                 <br>
@@ -35,7 +39,7 @@
                 <span class="recordarme">Recordarme</span>
             </div>
             <div class="mensaje">
-              <p class="mensaje">La combinación de email y contrasela no es válida.</p>
+                <p class="mensaje">La combinación de email y contrasela no es válida.</p>
             </div>
             <div class="boton">
                 <button class="botones" type="submit" name="aceptar">Ingresar</button>
