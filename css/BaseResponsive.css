@@ -1,4 +1,5 @@
 * {
+<<<<<<< Updated upstream
   box-sizing: border-box;
 }
 body {
@@ -20,166 +21,175 @@ section{
   flex-wrap: wrap;
   justify-content: space-around;
   margin: 0 auto;
+=======
+    box-sizing: border-box;
+>>>>>>> Stashed changes
 }
 
-article{
-  width: 90%;
-  display: flex;
-  flex-wrap: nowrap;
-  flex-direction: column;
-  justify-content: space-between;
-  background-color: aliceblue;
-  margin-bottom: 10px;
+body {
+    /* background-color: rgb(221, 216, 213); */
+    background-image: url(../img/background.jpg);
+    font-family: "Quicksand", sans-serif;
+    /* "Helvetica neue", Helvetica, Arial, Sans-serif; */
 }
-
-/*Ahora viene el Section*/
-
 
 
 /***********************
- * Div de laderecha
+ * Barra superior
  ***********************/
-div.buscador {
-  width: 100%;
-  margin: 0 auto;
-  overflow: hidden;
 
+header {
+    /* background-size: 100%; */
+    height: auto;
+    width: 100%;
+    margin: 0 auto;
+    border: 0px;
+    border-style: solid;
+    position: sticky;
+    top: 0;
+    z-index: 20;
 }
 
-/***********************
- * Estructura del Buscador
- ***********************/
- div.buscadorWrapper {
-   float: left;
-   background-color: blue;
-   text-align: center;
- 	width: 90%;
- 	max-width: 94%;
- 	height: 2.5em;
- 	overflow: hidden;
- 	background: transparent;
- 	margin: 0 auto;
- 	position: static;
-  top: 0px;
- }
-
- div.compra {
-   width: 6%;
-   float: left;
-
- }
- .compra a img{
-   float:right;
-  margin-right: -5%;
-   border-radius: 80%;
-   height: 2.5em;
- }
-
- .buscadorForm {
- text-align: left;
- width:79%;
- margin: 0 auto;
- position: fixed;
- top: 0px;
- float:left;
+nav {
+    background-color: #00a4ff;
+    margin: 0 auto;
+    width: 100%;
+    height: 11vh;
+    padding-top: 1px;
+    padding-left: 10px;
+    padding-right: 10px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    align-items: center;
 }
 
-
- .buscadorinputwrapper {
- /*	padding: 0 36px 0 0;*/ /* Right padding for submit button width */
- 	overflow: hidden;
-  width: 100%;
- }
-
- .buscadorInput {
-   width: 90%;
- }
-
- /***********************
-  * Configuración de Estilos *
-  ***********************/
- /*.buscador {
-   padding: 0 25px 0 200px;
- }*/
-
- .buscadorInput {
-  -webkit-box-sizing: content-box;
- -moz-box-sizing: content-box;
- box-sizing: content-box;
-   height: auto;
-   padding: 0 4% 0px;
- border-color: #888;
-  border-radius: 35px; /* (height/2) + border-width */
-  border-style: solid;
- border-width: 3px;
-  margin-top: 10px;
-  color: #333;
-  font-family: 'Helvetica', sans-serif;
- font-size: x-large;
- /*-webkit-appearance: none;*/
- /*-moz-appearance: none;*/
+img.logo {
+    width: 14%;
+    height: 40px;
 }
 
-.buscadorSubmit {
- position: absolute;
-right: 3%;
-top: 6%;
-display: block;
-width: auto%;
-height: 100%;
- padding: 0;
- padding-top:0.5%;
- border: none;
-margin-top: autopx; /* margin-top + border-width */
+h2.cabecera {
+    text-align: center;
+    color: #34495E;
+    font-style: bold;
+    font-size: 12px;
+}
 
-background: transparent;
- color: #888;
- font-family: 'Helvetica', sans-serif;
- font-size:x-large ;
- line-height: normal;
+.buscadorForm {
+    position: relative;
+    text-align: left;
+    width: 79%;
+    margin: 0 auto;
+    /*position: fixed;*/
+    top: 0px;
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    margin-left: 10px;
+}
+
+.buscadorInput {
+    -webkit-box-sizing: content-box;
+    -moz-box-sizing: content-box;
+    box-sizing: content-box;
+    height: 27px;
+    padding: 0 4% 0px;
+    border-color: #888;
+    border-radius: 35px;
+    /* (height/2) + border-width */
+    border-style: solid;
+    border-width: 1px;
+    /*margin-top: 10px;*/
+    color: #333;
+    font-family: 'Helvetica', sans-serif;
+    font-size: 16px;
+    width: 90%;
+    /*-webkit-appearance: none;*/
+    /*-moz-appearance: none;*/
 }
 
 .buscadorInput:focus {
-  outline: none;
-  border-color: #333;
+    outline: none;
+    border-color: #333;
 }
 
 .buscadorInput:focus.buscadorSubmit {
-   color: #333;
+    color: #333;
 }
 
 .buscadorSubmit:hover {
-  color: #333;
-  cursor: pointer;
+    color: #333;
+    cursor: pointer;
+}
+
+.buscadorSubmit {
+    position: absolute;
+    right: 50px;
+    top: 38%;
+    display: block;
+    width: auto%;
+    /*height: 100%;*/
+    padding: 0;
+    /* padding-top: 0.5%; */
+    border: none;
+    /* margin-top: autopx; */
+    /* margin-top + border-width */
+    background: transparent;
+    color: #888;
+    font-family: 'Helvetica', sans-serif;
+    font-size: 16px;
+    line-height: normal;
+}
+
+a.carrito {
+    height: 64%;
+}
+
+img.carrito {
+    /* float: right; */
+    /* margin-right: -5%; */
+    height: 100%;
+    border-radius: 80%;
+    height: 2.5em;
+    padding-left: 2px;
+}
+
+ul.login {
+    list-style-type: none;
+    display: flex;
+    margin: auto;
+    padding: 10px;
+}
+
+a.registro {
+    text-decoration: none;
+    color: white;
+    border-right: white solid 1px;
+    padding-right: 5px;
+}
+
+a.ingreso {
+    text-decoration: none;
+    color: white;
+    padding-left: 5px;
 }
 
 ::-webkit-input-placeholder {
- color: #888;
+    color: #888;
 }
 
 input:-moz-placeholder {
-  color: #888
+    color: #888
 }
+
 
 /****************
  Acá Terminó la barra de busqueda
  ****************/
-.cabecera {
-  text-align: center;
 
-}
-.cabecera img {
-  width: 22%;
-}
-h2.cabecera {
-  text-align: center;
-  color: #34495E;
-  font-style: bold;
-  font-size: xx-large;
-}
-
-/*Ver como armar el campo del precio*/
-
+<<<<<<< Updated upstream
 /*Arranca el section*/
 div.divselec {
 height: auto;
@@ -191,64 +201,110 @@ width: 100%;
   border-top-color: black;
   border-bottom-style: solid;
   border-bottom-color: black;
+=======
+section.divselec {
+    height: auto;
+    margin: 0 auto;
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.89);
+    display: flex;
+    border: 1px solid lightgray;
+    /* border-top-style: solid;
+    border-top-color: black;
+    border-bottom-style: solid;
+    border-bottom-color: black; */
+>>>>>>> Stashed changes
 }
 
-
 input {
-  width: auto;
-  margin:0 auto;
+    width: auto;
+    margin: 0 auto;
+    /* font-family: arial; */
+    padding-left: 2px;
+}
+
+.buttonOpciones {
+    margin-top: 10px;
 }
 
 select {
-  width: 60%;
-}
-
-.ingreso {
-  text-align: center;
+    width: 60%;
+    font-size: 15px;
+    margin-right: 10px;
 }
 
 div.filtros {
-  text-align: center;
-  width: 50%;
-  height: auto;
-  padding-left: 5%;
+    text-align: center;
+    width: 50%;
+    height: auto;
+    padding-left: 5%;
 }
-form.categoria{
-width: 70%;
-padding-top: 8%;
+
+form.categoria {
+    width: 70%;
+    padding-top: 5%;
 }
-input {
-  font-family: arial;
-  padding-left: 2px;
+
+form.precio {
+    width: 70%;
+    padding-top: 5%;
 }
-form.precio{
-width: 70%;
-padding-top: 5%;
-}
+
 div.seleccion {
-  width: 50%;
-  height: auto;
-  padding-bottom: 1%;
-  padding-left: 5%;
+    width: 50%;
+    height: auto;
+    padding-bottom: 1%;
+    padding-left: 5%;
 }
 
 .radioButton {
-  font-family: arial;
+    font-family: arial;
 }
+
 
 /***********************
 Arrancan los artículos
 ***********************/
 
+section {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin: 0 auto;
+}
+
+article {
+    width: 90%;
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: column;
+    justify-content: space-between;
+    ;
+    background-color: white;
+    margin-bottom: 10px;
+    /* height: 460px; */
+}
+
 div.imagen {
+<<<<<<< Updated upstream
   width: 100%;
   text-align: center;
   position: relative;
+=======
+    width: 100%;
+    /* height: 250px; */
+    position: relative;
+    text-align: center;
+>>>>>>> Stashed changes
 }
 
 div.imagen img {
-  width: 90%;
+    width: 100%;
+    height: auto;
+    /* max-height: 250px; */
 }
+<<<<<<< Updated upstream
 a.ingreso {
   text-decoration: none;
   color: black;
@@ -266,40 +322,73 @@ a.ingreso {
   text-align: center;
   transform: translate(-50%, -200%);
   border-radius:5%;
+=======
+
+a.zoom {
+    text-decoration: none;
+    position: absolute;
+    width: 50%;
+    font-size: x-large;
+    top: 0%;
+    left: 25%;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.5);
+    text-align: center;
+    /* transform: translate(-50%, -200%); */
+    border-radius: 5%;
+>>>>>>> Stashed changes
 }
 
 .datosProducto {
-  /*overflow: hidden;*/
-  border-style: solid;
-  display: flex;
-  flex-direction: row;
+    /*overflow: hidden;*/
+    border: 1px lightgray solid;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
 }
+
 .descripcion {
+<<<<<<< Updated upstream
   width: 75%;
   border-right-color: black;
   border-right-style: solid;
   /*float:left;*/
+=======
+    width: 75%;
+    /*float:left;*/
+>>>>>>> Stashed changes
 }
 
 div.descripcion h2 {
-  /*top: 0px;*/
-  /*text-align: left;*/
-  padding: 3px;
-  /*position:relative;*/
-  /*transform: translate(0%, -50%);*/
+    /*top: 0px;*/
+    /*text-align: left;*/
+    padding: 3px;
+    /*position:relative;*/
+    /*transform: translate(0%, -50%);*/
 }
 
+div.descripcion p {
+    /*top: 0px;*/
+    text-align: left;
+    font-size: 13px;
+    padding: 3px;
+    /*position:relative;*/
+    /*transform: translate(0%, -50%);*/
+}
 
 .valor {
-  text-align: center;
-font-family: sans-serif;
-font-style: italic;
-padding-left: 25%;
+    text-align: center;
+    /* font-family: sans-serif; */
+    font-style: italic;
+    /* padding-left: 25%; */
+    color: #00a4ff;
+    margin-right: 5px;
 }
 
 h4 {
-  /* position:relative;
+    /* position:relative;
   transform: translate(2%, -40%);*/
+<<<<<<< Updated upstream
   padding-left: 3%;
   height: 100%;
   text-decoration: none;
@@ -316,20 +405,40 @@ h4 {
       justify-content: space-around;
       /*margin: 0 auto;*/
     }
-
-    article{
-      width: 48%;
-      /*display: flex;*/
-      /*flex-wrap: nowrap;*/
-      flex-direction: column;
-      justify-content: space-between;
-      background-color: aliceblue;
-      margin-bottom: 10px;
-    }
-    .valor {
-padding-left: 0%;
+=======
+    padding-left: 3%;
 }
 
+footer {
+    height: 70px;
+    width: 100%;
+    background-color: #333;
+}
+>>>>>>> Stashed changes
+
+@media (min-width: 576px) {
+    section {
+        width: 90%;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        /*margin: 0 auto;*/
+    }
+    article {
+        width: 48%;
+        /*display: flex;*/
+        /*flex-wrap: nowrap;*/
+        flex-direction: column;
+        margin-bottom: 10px;
+        /* height: 490px; */
+    }
+    .valor {
+        padding-left: 0%;
+        /* margin-right: 5px; */
+    }
+}
+
+<<<<<<< Updated upstream
 @media (min-width: 768px) {
   section{
     width: 99%;
@@ -354,3 +463,80 @@ padding-left: 0%;
 form.categoria {
     padding-top: 6.5%;
 }
+=======
+
+/* .cabecera {
+    text-align: center;
+} */
+
+
+/* .cabecera img {
+    width: 22%;
+} */
+
+
+/*Ver como armar el campo del precio*/
+
+
+/*Arranca el section*/
+
+
+/***********************
+ * Div de la derecha
+ ***********************/
+
+
+/* div.buscador {
+    position: fixed;
+    top: 50px;
+    width: 100%;
+    margin: 0 auto;
+    overflow: hidden;
+} */
+
+
+/***********************
+ * Estructura del Buscador
+ ***********************/
+
+
+/* div.buscadorWrapper {
+    float: left;
+    background-color: blue;
+    text-align: center;
+    width: 90%;
+    max-width: 94%;
+    height: 2.5em;
+    overflow: hidden;
+    background: transparent;
+    margin: 0 auto;
+    position: static;
+    top: 0px;
+} */
+
+
+/* div.compra {
+    width: 6%;
+    float: left;
+} */
+
+
+/* .buscadorinputwrapper {
+    /*	padding: 0 36px 0 0;*/
+
+
+/* Right padding for submit button width 
+    overflow: hidden;
+    width: 100%;
+} */
+
+
+/***********************
+  * Configuración de Estilos *
+ ***********************/
+
+
+/*.buscador {
+   padding: 0 25px 0 200px;
+ }*/
+>>>>>>> Stashed changes
