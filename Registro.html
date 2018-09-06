@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/Registro.css">
+    <title>Registro</title>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <a class="nav" href="Home.html"><img class="logo" src="img/logo.png" alt=""></a>
+            <ul class="login">
+                <li>
+                    <a class="registro" href="login.html">¿Tenés una cuenta? Ingresá acá</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <section>
+        <h1>Crear una cuenta</h1>
+        <h2>Ingresá tus datos</h2>
+        <form class="contenedor-form" action="" method="post">
+            <div class="formulario">
+                <label class="formulario" for="Nombre de usuario">Nombre de usuario:</label>
+                <br>
+                <input class="nombreDeUsuario" type="text" name="Nombre de usuario" id="nombreDeUsuario" value="" placeholder="ingrese su nombre de usuario" required>
+            </div>
+            <div class="formulario">
+                <label class="formulario" for="email">Email:</label>
+                <br>
+                <input class="email" type="email" name="email" id="email" value="" placeholder="ingrese su e-mail" required>
+            </div>
+            <div class="formulario">
+                <label class="formulario" for="password">Contraseña:</label>
+                <br>
+                <input class="password" type="password" name="password" id="password" value="" placeholder="ingrese su contraseña" required>
+            </div>
+            <div class="formulario">
+                <label class="formulario" for="password">Repetir contraseña:</label>
+                <br>
+                <input class="password" type="password" name="password" id="password" value="" placeholder="repetir contraseña" required>
+            </div>
+            <div class="formulario">
+                <label class="formulario" for="Domicilio">Domicilio:</label>
+                <br>
+                <input class="Domicilio" type="text" name="Domicilio" id="Domicilio" value="" placeholder="ingrese su domicilio" required>
+            </div>
+            <p class=s exo>Sexo</p>
+            <div class="Sexo">
+                <span class="recordarme">Masculino</span>
+                <input class="Sexo" type="checkbox" name="Sexo" value="m">
+                <span class="recordarme">Femenino</span>
+                <input class="Sexo" type="checkbox" name="Sexo" value="f">
+            </div>
+            <div class="boton">
+                <button class="botones" type="submit" name="aceptar">Aceptar</button>
+            </div>
+
+    </section>
+</body>
+
+</html>

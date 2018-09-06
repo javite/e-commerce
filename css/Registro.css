@@ -33,24 +33,14 @@ ul.login {
     /* padding: 10px; */
 }
 
+a.logo {
+    display: block;
+}
+
 a.registro {
     text-decoration: none;
     color: white;
     padding-right: 5px;
-}
-
-h1 {
-    font-size: 2em;
-    min-width: 210px;
-}
-
-h2 {
-    font-size: 1.5em;
-    min-width: 210px;
-}
-
-ul.registro {
-    list-style-type: none;
 }
 
 a.nav {
@@ -62,8 +52,14 @@ a.nav {
     justify-content: center;
 }
 
-a.logo {
-    display: block;
+h1 {
+    font-size: 2em;
+    min-width: 210px;
+}
+
+h2 {
+    font-size: 1.5em;
+    min-width: 210px;
 }
 
 section {
@@ -81,23 +77,6 @@ form div {
     min-width: 210px;
 }
 
-button.botones {
-    height: 35px;
-    width: 35%;
-    border-radius: 8px;
-    background-color: #00a4ff;
-    color: white;
-    border: 0px;
-    font-size: 14px;
-    padding-left: 15px;
-    padding-right: 15px;
-}
-
-p.mensaje {
-    color: red;
-    display: none;
-}
-
 label.formulario {
     margin-bottom: 10px;
 }
@@ -109,11 +88,14 @@ label.formulario {
     padding-right: 10px;
 }
 
-.recordarme {
-    display: flex;
-    justify-content: flex-end;
-}
-
-.sin-registro {
-    font-size: 12px;
+button.botones {
+    height: 35px;
+    width: 35%;
+    border-radius: 8px;
+    background-color: #00a4ff;
+    color: white;
+    border: 0px;
+    font-size: 14px;
+    padding-left: 15px;
+    padding-right: 15px;
 }
