@@ -88,6 +88,15 @@ label.formulario {
     padding-right: 10px;
 }
 
+.mensaje-error {
+    color: red;
+    font-size: 12px;
+}
+
+.error {
+    border: 1px solid red;
+}
+
 button.botones {
     height: 35px;
     width: 35%;

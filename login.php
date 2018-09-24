@@ -11,10 +11,10 @@
 <body>
     <header>
         <nav class="nav">
-            <a class="nav" href="Home.html"><img class="logo" src="img/logo.png" alt=""></a>
+            <a class="nav" href="Home.php"><img class="logo" src="img/logo.png" alt=""></a>
             <ul class="login">
                 <li>
-                    <a class="registro" href="registro.html">Crear una cuenta</a>
+                    <a class="registro" href="registro.php">Crear una cuenta</a>
                 </li>
             </ul>
         </nav>
@@ -33,7 +33,7 @@
                 <br>
                 <input class="password" type="password" name="password" id="password" value="" placeholder="ingrese su contraseña" required>
             </div>
-            <p class="sin-registro">¿No tenes usuario creado? Hacé click <a class="sin-registro" href="registro.html">aquí</a> para crear uno.</p>
+            <p class="sin-registro">¿No tenes usuario creado? Hacé click <a class="sin-registro" href="registro.php">aquí</a> para crear uno.</p>
             <div class="recordarme">
                 <input class="recordarme" type="checkbox" name="recordarme" value="r">
                 <span class="recordarme">Recordarme</span>

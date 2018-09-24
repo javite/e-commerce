@@ -15,10 +15,10 @@
 
             <ul class="login">
                 <li>
-                    <a class="registro" href="registro.html">Registrese</a>
+                    <a class="registro" href="registro.php">Registrese</a>
                 </li>
                 <li>
-                    <a class="ingreso" href="login.html">Login</a>
+                    <a class="ingreso" href="login.php">Login</a>
                 </li>
             </ul>
         </nav>
