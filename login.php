@@ -1,3 +1,19 @@
+<?php
+require_once("funciones.php");
+
+if ($_POST) {
+
+  $errores = validarLogin($_POST);
+  if (empty($errores)) {
+    $_SESSION["usuario"]=$_POST["email"];
+    header("location:Home.php");exit;
+  }
+}
+
+
+
+ ?>
+
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
 
@@ -26,12 +42,36 @@
             <div class="formulario">
                 <label class="formulario" for="email">Email:</label>
                 <br>
-                <input class="email" type="email" name="email" id="email" value="" placeholder="ingrese su e-mail" required>
+
+
+                <?php if (isset($errores["email"])) : ?>
+                <input class="email error" type="email" name="email" id="email" value="" placeholder="ingrese su e-mail" required>
+                <p class="mensaje-error">
+                <?=$errores["email"]?>
+                </p>
+                <?php else : ?>
+                  <input class="email" type="email" name="email" id="email" value="" placeholder="ingrese su e-mail" required>
+                <?php endif ; ?>
+
+
+
             </div>
             <div class="formulario">
                 <label class="formulario" for="password">Contraseña:</label>
                 <br>
-                <input class="password" type="password" name="password" id="password" value="" placeholder="ingrese su contraseña" required>
+
+
+                <?php if (isset($errores["password"])) : ?>
+                <input class="password error" type="password" name="password" id="password" value="" placeholder="ingrese su contraseña" required>
+                <p class="mensaje-error">
+                <?=$errores["password"]?>
+                </p>
+                <?php else : ?>
+                  <input class="password" type="password" name="password" id="password" value="" placeholder="ingrese su contraseña" required>
+                <?php endif ; ?>
+
+
+
             </div>
             <p class="sin-registro">¿No tenes usuario creado? Hacé click <a class="sin-registro" href="registro.php">aquí</a> para crear uno.</p>
             <div class="recordarme">
