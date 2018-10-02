@@ -117,3 +117,11 @@ label.formulario {
 .sin-registro {
     font-size: 12px;
 }
+.mensaje-error {
+    color: red;
+    font-size: 12px;
+}
+
+.error {
+    border: 1px solid red;
+}

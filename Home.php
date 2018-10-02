@@ -1,3 +1,15 @@
+<?php
+session_start();
+$usuario="";
+if($_SESSION) {
+  $usuario = $_SESSION["usuario"];
+}
+
+
+
+ ?>
+
+
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
 
@@ -13,6 +25,7 @@
         <nav class="nav">
             <img class="logo" src="img/logo.png" alt="">
 
+             <?php if($usuario == NULL) :?>
             <ul class="login">
                 <li>
                     <a class="registro" href="registro.php">Registrese</a>
@@ -21,6 +34,14 @@
                     <a class="ingreso" href="login.php">Login</a>
                 </li>
             </ul>
+          <?php else : ?>
+            <ul class="login">
+                            <li>
+                    <a class="ingreso" href=""><?php echo "Hola" ." ". $usuario ?></a>
+                </li>
+            </ul>
+<?php
+        endif; ?>
         </nav>
         <form class="buscadorForm" action="#" method="post">
             <input class="buscadorInput" type="search" placeholder="Buscar...">

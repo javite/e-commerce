@@ -15,9 +15,19 @@ if ($_POST){
     $direccion = $_POST["domicilio"];
     if(isset($_POST["sexo"])){
         $genero = $_POST["sexo"];
-    } 
-    
+    }
+
     if(empty($errores)){
+
+      //Registrar usuarios
+      $registroUsuario = armarUsuario();
+      crearUsuario($registroUsuario);
+
+      //Guardar a Foto
+      $ext = pathinfo($_FILES["foto"]["name"], PATHINFO_EXTENSION);
+      move_uploaded_file($_FILES["foto"]["tmp_name"], "img/" . trim($_POST["email"]) ."." .$ext);
+
+      //Redireccionar
         header("Location: Home.php");
         exit;
     }
@@ -50,16 +60,10 @@ if ($_POST){
     <section>
         <h1>Crear una cuenta</h1>
         <h2>Ingresá tus datos</h2>
-        <?php if(empty($errores) == false):?>
-        <ul>
-            <?php foreach ($errores as $error) :?>
-                <li><?=$error?></li>
-            <?php endforeach;?>
-        </ul>
-        <?php endif; ?>
-        <form class="contenedor-form" action="Registro.php" method="post">
+
+        <form class="contenedor-form" action="Registro.php" method="post" enctype="multipart/form-data">
             <div class="formulario">
-            
+
                 <label class="formulario" for="usuario">Nombre de usuario:</label>
                 <br>
                 <?php if (isset($errores["usuario"])) : ?>
@@ -68,6 +72,7 @@ if ($_POST){
 				<?=$errores["usuario"]?>
 				</p>
 				<?php else : ?>
+
                 <input class="nombreDeUsuario" type="text" name="usuario"  value="<?=$usuario?>" placeholder="ingrese su nombre de usuario" >
                 <?php endif; ?>
             </div>
@@ -133,9 +138,23 @@ if ($_POST){
                 <span class="recordarme">Femenino</span>
                 <input class="sexo" type="radio" name="sexo" value="f" <?php if($genero == "f"){echo "checked";} ?>>
             </div>
+            <div class="formulario">
+              <?php if (isset($errores["usuario"])) : ?>
+              <input class="foto error" type="file" name="foto" value="">
+              <p class="mensaje-error">
+              <?=$errores["foto"]?>
+              </p>
+              <?php else : ?>
+
+            <input class="foto" type="file" name="foto" value="">
+              <?php endif; ?>
+
+
+            </div>
             <div class="boton">
                 <button class="botones" type="submit" name="aceptar">Aceptar</button>
             </div>
+
 
     </section>
 </body>
