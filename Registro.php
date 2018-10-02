@@ -138,6 +138,19 @@ if ($_POST){
                 <span class="recordarme">Femenino</span>
                 <input class="sexo" type="radio" name="sexo" value="f" <?php if($genero == "f"){echo "checked";} ?>>
             </div>
+            <div class="formulario">
+              <?php if (isset($errores["usuario"])) : ?>
+              <input class="foto error" type="file" name="foto" value="">
+              <p class="mensaje-error">
+              <?=$errores["foto"]?>
+              </p>
+              <?php else : ?>
+
+            <input class="foto" type="file" name="foto" value="">
+              <?php endif; ?>
+
+
+            </div>
             <div class="boton">
                 <button class="botones" type="submit" name="aceptar">Aceptar</button>
             </div>
