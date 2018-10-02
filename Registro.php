@@ -60,13 +60,7 @@ if ($_POST){
     <section>
         <h1>Crear una cuenta</h1>
         <h2>Ingresá tus datos</h2>
-        <?php if(empty($errores) == false):?>
-        <ul>
-            <?php foreach ($errores as $error) :?>
-                <li><?=$error?></li>
-            <?php endforeach;?>
-        </ul>
-        <?php endif; ?>
+
         <form class="contenedor-form" action="Registro.php" method="post" enctype="multipart/form-data">
             <div class="formulario">
 
@@ -143,9 +137,6 @@ if ($_POST){
                 <input class="sexo" type="radio" name="sexo" value="m" <?php if($genero == "m"){echo "checked";} ?>>
                 <span class="recordarme">Femenino</span>
                 <input class="sexo" type="radio" name="sexo" value="f" <?php if($genero == "f"){echo "checked";} ?>>
-            </div>
-            <div class="formulario">
-              <input type="file" name="foto" value="">
             </div>
             <div class="boton">
                 <button class="botones" type="submit" name="aceptar">Aceptar</button>

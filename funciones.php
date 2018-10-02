@@ -1,5 +1,7 @@
 <?php
 
+session_start();
+
 function buscarPorEmail($email) {
   $base = file_get_contents("usuarios.json");
   $baseArray = json_decode($base, true);
@@ -32,9 +34,19 @@ $usuarios =json_decode($usuarios, true);
 return $usuarios;
 }
 
+function proximoId() {
+$json =file_get_contents("usuarios.json");
+if ($json == "") {
+  $json =1;
+}
+$usuarios =json_decode($json, true);
+$ultimo = array_pop($usuarios);
+return $ultimo["id"] + 1;
+}
 
 function armarUsuario() {
   return [
+    "id" => proximoId(),
     "usuario" => trim($_POST["usuario"]),
     "password" => password_hash($_POST["password"], PASSWORD_DEFAULT),
     "genero" => $_POST["sexo"],
@@ -105,8 +117,55 @@ function validarRegistro($datos) {
     }
   }
 
+    return $errores;
+}
 
-  return $errores;
+function buscarPorId($id) {
+ $usuarios= file_get_contents("usuarios.json");
+
+ if ($usuarios == "") {
+   return null;
+ }
+ $usuariosArray= json_decode($usuarios, true);
+ foreach ($usuariosArray as $usuario){
+   if($id==$usuario["id"]){
+     return $usuario;
+    }
+  }
+  return null;
+}
+
+//*Login
+
+function validarLogin($datos) {
+  $datosFinales = [];
+  $errores = [];
+
+  foreach ($datos as $posicion => $dato) {
+    $datosFinales[$posicion] = trim($dato);
+  }
+if ($datosFinales["email"] == "") {
+  $errores["email"] = "El email no puede estar vacío";
+}
+else if ( filter_var($datosFinales["email"], FILTER_VALIDATE_EMAIL) == false) {
+  $errores["email"] = "El email no es válido";
+}
+if(buscarPorEmail($datosFinales["email"]) == NULL) {
+  $errores["email"] = "El usuario no existe";
+}
+//* validar password
+if ($datosFinales["password"] == "") {
+  $errores["password"] = "La contraseña no puede estar vacia";
+}
+else
+$usuario = buscarPorEmail($datosFinales["email"]);
+if($datosFinales["password"] !== NULL) {
+  if(!password_verify($datosFinales["password"], $usuario["password"])) {
+  $errores["password"] = "Contraseña incorrecta";
+}
+
+}
+return $errores;
 }
 
 ?>
