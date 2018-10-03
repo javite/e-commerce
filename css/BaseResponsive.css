@@ -129,6 +129,33 @@ ul.login {
     display: flex;
     padding: 10px;
 }
+ul.logout {
+    list-style-type: none;
+    display: flex;
+    padding: 10px;
+}
+a.logeado {
+    text-decoration: none;
+    color: white;
+    padding-right: 5px;
+}
+li.saludo {
+     text-decoration: none;
+     color: white;
+     padding-right: 5px;
+     border-right: white solid 1px;
+     padding-right: 5px;
+   }
+
+li.logout {
+  padding-left: 5px;
+}
+
+div.logeado {
+  text-align: center;
+  padding-top: 1px;
+
+}
 
 a.registro {
     text-decoration: none;

@@ -35,11 +35,17 @@ if($_SESSION) {
                 </li>
             </ul>
           <?php else : ?>
-            <ul class="login">
-                            <li>
-                    <a class="ingreso" href=""><?php echo "Hola" ." ". $usuario ?></a>
-                </li>
-            </ul>
+            <div class="logeado">
+            <ul class="logout">
+                <li class="saludo">
+                  <?php echo "Hola" ." ". $usuario ?>
+                  </li>
+                  <li class="logout">
+                  <a class="logeado" href="Home.php">LOGOUT</a>
+                 </li>
+              </ul>
+
+            </div>
 <?php
         endif; ?>
         </nav>

@@ -14,6 +14,17 @@ function buscarPorEmail($email) {
    return NULL;
 }
 
+function armarUsuario() {
+  return [
+    "id" => proximoId(),
+    "usuario" => trim($_POST["usuario"]),
+    "password" => password_hash($_POST["password"], PASSWORD_DEFAULT),
+    "genero" => $_POST["sexo"],
+    "email" => trim($_POST["email"]),
+    "domicilio" => $_POST["domicilio"]
+  ];
+}
+
 function crearUsuario($registroUsuario) {
 
   $usuarios = file_get_contents("usuarios.json");
@@ -44,16 +55,7 @@ $ultimo = array_pop($usuarios);
 return $ultimo["id"] + 1;
 }
 
-function armarUsuario() {
-  return [
-    "id" => proximoId(),
-    "usuario" => trim($_POST["usuario"]),
-    "password" => password_hash($_POST["password"], PASSWORD_DEFAULT),
-    "genero" => $_POST["sexo"],
-    "email" => trim($_POST["email"]),
-    "domicilio" => $_POST["domicilio"]
-  ];
-}
+
 
 
 
