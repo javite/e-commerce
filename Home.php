@@ -1,18 +1,14 @@
 <?php
-session_start();
+require_once("funciones.php");
 $usuario="";
-if($_SESSION) {
+if(isset($_SESSION["usuario"])) {
   $usuario = $_SESSION["usuario"];
 }
 
-
-
- ?>
-
+?>
 
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
-
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -24,8 +20,7 @@ if($_SESSION) {
     <header>
         <nav class="nav">
             <img class="logo" src="img/logo.png" alt="">
-
-             <?php if($usuario == NULL) :?>
+             <?php if($usuario == "") :?>
             <ul class="login">
                 <li>
                     <a class="registro" href="registro.php">Registrese</a>
@@ -37,19 +32,19 @@ if($_SESSION) {
           <?php else : ?>
             <div class="logeado">
             <ul class="logout">
-                <li class="saludo">
-                  <?php echo "Hola" ." ". $usuario ?>
-                  </li>
+                <li class="registro">
+                 <a class="registro" href="detalleUsuario.php"><?="Hola"." ".$usuario."!"?></a> 
+                </li>
+                  <img src="" alt="">
                   <li class="logout">
-                  <a class="logeado" href="Home.php">LOGOUT</a>
+                  <a class="logeado" href="logout.php">Logout</a>
                  </li>
-              </ul>
-
+            </ul>
             </div>
 <?php
         endif; ?>
         </nav>
-        <form class="buscadorForm" action="#" method="post">
+        <form class="buscadorForm" action="#" method="get">
             <input class="buscadorInput" type="search" placeholder="Buscar...">
             <input class="buscadorSubmit" type="submit" value="IR!" />
             <a class="carrito" href="#">
@@ -59,33 +54,32 @@ if($_SESSION) {
     </header>
     <section class="divselec">
         <div class="filtros">
-            <form class="categoria" action="" method="POST">
-                <label for="categoria"></label>
-                <select id="categoria" name="categoria">
-            <option value="cat1">Categoría 1</option>
-            <option value="cat2">Categoría 2</option>
-            <option value="cat3">Categoría 3</option>
-            <option value="cat4">Categoría 4</option>
-            <option value="cat5">Categoría 5</option>
-            <option value="cat6">Categoría 6</option>
-            <option value="cat7">Categoría 7</option>
+        <form class="categoria" action="" method="get">
+            <label for="categoria"></label>
+            <select id="categoria" name="categoria">
+                <option value="cat1">Categoría 1</option>
+                <option value="cat2">Categoría 2</option>
+                <option value="cat3">Categoría 3</option>
+                <option value="cat4">Categoría 4</option>
+                <option value="cat5">Categoría 5</option>
+                <option value="cat6">Categoría 6</option>
+                <option value="cat7">Categoría 7</option>
+            </select>
             <input type="submit" value="Filtrar">
         </form>
-        <form class="precio" action="" method="POST">
+        <form class="precio" action="" method="get">
           <label for="precio"></label>
           <select id="precio" name="precio">
             <option value="max500">Hasta $500 </option>
             <option value="max1500">$500 a $1500 </option>
             <option value="max2500">$1500 a $2500 </option>
             <option value="min2500">Más de $2500 </option>
-            <input type="submit" value="Filtrar">
           </select>
-            </form>
+          <input type="submit" value="Filtrar">
+        </form>
         </div>
         <div class="seleccion">
-            <form action="" method="POST">
-                <label for="opciones"></label>
-                <br>
+            <form action="" method="get">
                 <input class="radioButton" type="radio" name="opciones" value="s">
                 <span>En Liquidación</span>
                 <br>
@@ -198,7 +192,7 @@ if($_SESSION) {
         </article>
     </section>
     <footer>
-
+        <p class="footer">Copyright © 1999-2018 Digital House courso Blend Full Stack</p>
     </footer>
 
 

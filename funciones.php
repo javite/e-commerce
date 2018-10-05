@@ -1,6 +1,12 @@
 <?php
 
 session_start();
+if (isset($_COOKIE["usuario"]) && isset($_SESSION["usuario"]) == false) {
+  $_SESSION["usuario"] = $_COOKIE["usuario"];
+}   
+if (isset($_COOKIE["email"]) && isset($_SESSION["email"]) == false) {
+  $_SESSION["email"] = $_COOKIE["email"];
+}
 
 function buscarPorEmail($email) {
   $base = file_get_contents("usuarios.json");
@@ -33,7 +39,6 @@ function crearUsuario($registroUsuario) {
     $usuarios=[];
   }
   $usuarios[] = $registroUsuario;
-
   $usuarios = json_encode($usuarios);
  file_put_contents("usuarios.json", $usuarios);
 
@@ -54,10 +59,6 @@ $usuarios =json_decode($json, true);
 $ultimo = array_pop($usuarios);
 return $ultimo["id"] + 1;
 }
-
-
-
-
 
 function validarRegistro($datos) {
   $datosFinales = [];
@@ -118,13 +119,11 @@ function validarRegistro($datos) {
       $errores["foto"] = "La imagen debe ser JPG o PNG";
     }
   }
-
-    return $errores;
+  return $errores;
 }
 
 function buscarPorId($id) {
  $usuarios= file_get_contents("usuarios.json");
-
  if ($usuarios == "") {
    return null;
  }
@@ -143,9 +142,10 @@ function validarLogin($datos) {
   $datosFinales = [];
   $errores = [];
 
-  foreach ($datos as $posicion => $dato) {
-    $datosFinales[$posicion] = trim($dato);
-  }
+foreach ($datos as $posicion => $dato) {
+  $datosFinales[$posicion] = trim($dato);
+}
+
 if ($datosFinales["email"] == "") {
   $errores["email"] = "El email no puede estar vacío";
 }
@@ -159,15 +159,29 @@ if(buscarPorEmail($datosFinales["email"]) == NULL) {
 if ($datosFinales["password"] == "") {
   $errores["password"] = "La contraseña no puede estar vacia";
 }
-else
+else {
 $usuario = buscarPorEmail($datosFinales["email"]);
-if($datosFinales["password"] !== NULL) {
-  if(!password_verify($datosFinales["password"], $usuario["password"])) {
-  $errores["password"] = "Contraseña incorrecta";
-}
-
+  if($datosFinales["password"] !== NULL) {
+    if(!password_verify($datosFinales["password"], $usuario["password"])) {
+    $errores["password"] = "Contraseña incorrecta";
+  }
+  } 
 }
 return $errores;
 }
 
+function loguearUsuario($email, $recordarme){
+  $usuarioLogueado = buscarPorEmail($email);
+  $_SESSION["usuario"] = $usuarioLogueado["usuario"];
+  $_SESSION["email"] = $usuarioLogueado["email"];
+  if($recordarme) {
+    setcookie("usuario", $usuarioLogueado["usuario"], time() + 60);
+    setcookie("email", $usuarioLogueado["email"], time() + 60); 
+  }
+}
+
+function traerFoto() {
+  $foto = glob("img/" . $_SESSION["email"] . "*")[0];
+  return $foto;
+}
 ?>

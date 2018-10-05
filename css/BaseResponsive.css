@@ -67,18 +67,16 @@ h2.cabecera {
     height: 27px;
     padding: 0 4% 0px;
     border-color: #888;
-    border-radius: 35px;
-    /* (height/2) + border-width */
+    /* border-radius: 35px; */
+    border-top-left-radius: 35px;
+    border-bottom-left-radius: 35px;
     border-style: solid;
     border-width: 1px;
-    /*margin-top: 10px;*/
     color: #333;
     font-family: 'Helvetica', sans-serif;
     font-size: 16px;
     width: 50%;
     min-width: 140px;
-    /*-webkit-appearance: none;*/
-    /*-moz-appearance: none;*/
 }
 
 .buscadorInput:focus {
@@ -102,12 +100,15 @@ h2.cabecera {
     border: none;
     background: white;
     color: #888;
+    border: solid 1px  #888;
     font-family: 'Helvetica', sans-serif;
     font-size: 16px;
     line-height: normal;
-    border-radius: 20px;
-    height: 30px;
-    margin: 2px;
+    /* border-radius: 20px; */
+    border-top-right-radius: 35px;
+    border-bottom-right-radius: 35px;
+    height: 29px;
+    margin-right: 10px;
 }
 
 a.carrito {
@@ -185,7 +186,10 @@ input:-moz-placeholder {
 
 section.divselec {
     height: auto;
-    margin: 0 auto;
+    margin-top: 0;
+    margin-bottom: 10px; 
+    margin-left: auto;
+    margin-right: auto;
     width: 100%;
     background-color: rgba(255, 255, 255, 0.89);
     display: flex;
@@ -215,20 +219,29 @@ div.filtros {
 }
 
 form.categoria {
-    width: 70%;
+    /* width: 70%; */
     padding-top: 5%;
+    display: flex;
 }
 
 form.precio {
-    width: 70%;
+    /* width: 70%; */
     padding-top: 5%;
+    display: flex;
 }
 
 div.seleccion {
     width: 50%;
     height: auto;
     padding-bottom: 1%;
-    padding-left: 5%;
+    padding-left: 3%;
+}
+
+span{
+    font-size: 14px;
+}
+select{
+    font-size: 14px;
 }
 
 .radioButton {
@@ -321,6 +334,18 @@ footer {
     height: 70px;
     width: 100%;
     background-color: #333;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+}
+.footer{
+    font-size: 11px;
+    color: white;
+}
+.img-usuario{
+    border-radius: 50%;
 }
 
 @media (min-width: 576px) {

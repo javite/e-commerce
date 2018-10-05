@@ -18,18 +18,16 @@ if ($_POST){
     }
 
     if(empty($errores)){
-
       //Registrar usuarios
-      $registroUsuario = armarUsuario();
-      crearUsuario($registroUsuario);
-
+      $nuevoUsuario = armarUsuario();
+      crearUsuario($nuevoUsuario);
       //Guardar a Foto
       $ext = pathinfo($_FILES["foto"]["name"], PATHINFO_EXTENSION);
-      move_uploaded_file($_FILES["foto"]["tmp_name"], "img/" . trim($_POST["email"]) ."." .$ext);
-
+      move_uploaded_file($_FILES["foto"]["tmp_name"], "img/" . trim($nuevoUsuario["email"]) ."." .$ext);
+      loguearUsuario($nuevoUsuario["email"],false);
       //Redireccionar
-        header("Location: Home.php");
-        exit;
+    header("Location: Home.php");
+    exit;
     }
 }
 
