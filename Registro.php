@@ -2,11 +2,17 @@
 
 require_once("funciones.php");
 
-    $usuario = "";
-    $email = "";
-    $direccion = "";
-    $genero = "";
-    $errores = [];
+$usuario = "";
+$email = "";
+$direccion = "";
+$genero = "";
+$errores = [];
+
+/*si el usuario esta logueado y se entra desde la barra del navegador te redirecciona a la home*/
+if(isset($_SESSION["usuario"])){
+    header("Location: Home.php");
+    exit;
+}
 
 if ($_POST){
     $errores = validarRegistro($_POST);

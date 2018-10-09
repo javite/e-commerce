@@ -1,6 +1,12 @@
 <?php
 require_once("funciones.php");
 
+/*si el usuario esta logueado y se entra desde la barra del navegador te redirecciona a la home*/
+if(isset($_SESSION["usuario"])){
+    header("Location: Home.php");
+    exit;
+  }
+
 if ($_POST) {
   $errores = validarLogin($_POST);
   if (empty($errores)) {

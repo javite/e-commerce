@@ -1,6 +1,7 @@
 <?php
 require_once("funciones.php");
 $usuario="";
+
 if(isset($_SESSION["usuario"])) {
   $usuario = $_SESSION["usuario"];
 }

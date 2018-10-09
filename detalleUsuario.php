@@ -1,7 +1,11 @@
 <?php
 
 include_once("funciones.php");
-// $id = $_GET["id"];
+/*si el usuario no esta logueado y se entra desde la barra del navegador te redirecciona al login*/
+if(!isset($_SESSION["usuario"])){
+  header("Location: login.php");
+  exit;
+}
 $usuario = buscarPorEmail($_SESSION["email"]);
 $foto = traerFoto();
 ?>
