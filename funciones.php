@@ -53,7 +53,7 @@ return $usuarios;
 function proximoId() {
 $json =file_get_contents("usuarios.json");
 if ($json == "") {
-  $json =1;
+  return 1;
 }
 $usuarios =json_decode($json, true);
 $ultimo = array_pop($usuarios);
