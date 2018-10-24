@@ -33,11 +33,11 @@ $foto = traerFoto();
         </nav>
     </header>
   <div class="principal">
-      <h1>Bienvenido al perfil de <?=$usuario["usuario"]?></h1>
+      <h1>Bienvenido al perfil de <?=$usuario["first_name"]?></h1>
       <img class="img-usuario" width="200" src="<?=$foto?>" alt="">
       <ul>
         <li>Email: <?=$usuario["email"]?></li>
-        <li>Genero: <?php if ($usuario["genero"] == "m"):?>
+        <li>Genero: <?php if ($usuario["gender"] == "m"):?>
         varon
         <?php else:?>
         mujer

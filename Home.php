@@ -49,7 +49,7 @@ if(isset($_SESSION["usuario"])) {
             <input class="buscadorInput" type="search" placeholder="Buscar...">
             <input class="buscadorSubmit" type="submit" value="IR!" />
             <a class="carrito" href="#">
-                <img class="carrito" src="img/carrito1.jpg" alt="">
+                <img class="carrito" src="img/carrito.jpg" alt="">
             </a>
         </form>
     </header>
@@ -193,7 +193,7 @@ if(isset($_SESSION["usuario"])) {
         </article>
     </section>
     <footer>
-        <p class="footer">Copyright © 1999-2018 Digital House courso Blend Full Stack</p>
+        <p class="footer">Copyright © 2018 Digital House - Curso Blend Full Stack</p>
     </footer>
 
 

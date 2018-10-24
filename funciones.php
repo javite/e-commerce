@@ -8,21 +8,41 @@ if (isset($_COOKIE["email"]) && isset($_SESSION["email"]) == false) {
   $_SESSION["email"] = $_COOKIE["email"];
 }
 
-function buscarPorEmail($email) {
-  $base = file_get_contents("usuarios.json");
-  $baseArray = json_decode($base, true);
+$dsn = "mysql:host=localhost;dbname=e-commerce;port=3306;";
+$usuario = "root";
+$pass = "";
 
-   foreach($baseArray as $infoUser) {
-      if($infoUser["email"] == $email) {
-         return $infoUser;
-     }
-   }
-   return NULL;
+try {
+  $db = new PDO($dsn, $usuario, $pass);
+  $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+} catch (\Exception $e) {
+  var_dump($e);exit;
+  echo "Hubo un error";exit;
+}
+
+// function buscarPorEmail($email) {
+//   $base = file_get_contents("usuarios.json");
+//   $baseArray = json_decode($base, true);
+
+//    foreach($baseArray as $infoUser) {
+//       if($infoUser["email"] == $email) {
+//          return $infoUser;
+//      }
+//    }
+//    return NULL;
+// }
+
+function buscarPorEmail($email) {
+global $db;
+$consulta = $db->prepare("SELECT * FROM usuarios WHERE email = :email"); //nombre as usuario, email, contraseña as password
+$consulta->bindValue(":email", $email);
+$consulta->execute();
+return $consulta->fetch(PDO::FETCH_ASSOC);
 }
 
 function armarUsuario() {
   return [
-    "id" => proximoId(),
+    // "id" => proximoId(),
     "usuario" => trim($_POST["usuario"]),
     "password" => password_hash($_POST["password"], PASSWORD_DEFAULT),
     "genero" => $_POST["sexo"],
@@ -31,34 +51,55 @@ function armarUsuario() {
   ];
 }
 
+// function crearUsuario($registroUsuario) {
+
+//   $usuarios = file_get_contents("usuarios.json");
+//   $usuarios = json_decode($usuarios, true);
+//   if($usuarios === NULL) {
+//     $usuarios=[];
+//   }
+//   $usuarios[] = $registroUsuario;
+//   $usuarios = json_encode($usuarios);
+//  file_put_contents("usuarios.json", $usuarios);
+
+// }
+
 function crearUsuario($registroUsuario) {
 
-  $usuarios = file_get_contents("usuarios.json");
-  $usuarios = json_decode($usuarios, true);
-  if($usuarios === NULL) {
-    $usuarios=[];
-  }
-  $usuarios[] = $registroUsuario;
-  $usuarios = json_encode($usuarios);
- file_put_contents("usuarios.json", $usuarios);
-
+  global $db;
+  $consulta = $db->prepare("INSERT into usuarios values (default, :nombre, :apellido, :email, :password, :genero, default, default, default)");
+  $consulta->bindValue(":nombre", $registroUsuario["usuario"]);
+  $consulta->bindValue(":apellido", $registroUsuario["usuario"]);
+  $consulta->bindValue(":email", $registroUsuario["email"]);
+  $consulta->bindValue(":password", $registroUsuario["password"]);
+  $consulta->bindValue(":genero", $registroUsuario["genero"]);
+  // $consulta->bindValue(":fecha_creacion", date(DATE_ATOM, mktime(0, 0, 0, 7, 1, 2000)));
+  // $consulta->bindValue(":fecha_actualizacion", date(DATE_ATOM, mktime(0, 0, 0, 7, 1, 2000)));
+  $consulta->execute();
 }
 
+// function traerUsuarios() {
+//   $usuarios = file_get_contents("usuarios.json");
+// $usuarios =json_decode($usuarios, true);
+// return $usuarios;
+// }
 function traerUsuarios() {
-  $usuarios = file_get_contents("usuarios.json");
-$usuarios =json_decode($usuarios, true);
-return $usuarios;
+  global $db;
+  $consulta = $db->prepare("SELECT * FROM usuarios");
+  $consulta->execute();
+  return $consulta->fetchAll(PDO::FETCH_ASSOC);
 }
 
-function proximoId() {
-$json =file_get_contents("usuarios.json");
-if ($json == "") {
-  return 1;
-}
-$usuarios =json_decode($json, true);
-$ultimo = array_pop($usuarios);
-return $ultimo["id"] + 1;
-}
+// function proximoId() {
+// $json =file_get_contents("usuarios.json");
+// if ($json == "") {
+//   return 1;
+// }
+// $usuarios =json_decode($json, true);
+// $ultimo = array_pop($usuarios);
+// return $ultimo["id"] + 1;
+// }
+
 
 function validarRegistro($datos) {
   $datosFinales = [];
@@ -122,18 +163,27 @@ function validarRegistro($datos) {
   return $errores;
 }
 
-function buscarPorId($id) {
- $usuarios= file_get_contents("usuarios.json");
- if ($usuarios == "") {
-   return null;
- }
- $usuariosArray= json_decode($usuarios, true);
- foreach ($usuariosArray as $usuario){
-   if($id==$usuario["id"]){
-     return $usuario;
-    }
-  }
-  return null;
+// function buscarPorId($id) {
+//  $usuarios= file_get_contents("usuarios.json");
+//  if ($usuarios == "") {
+//    return null;
+//  }
+//  $usuariosArray= json_decode($usuarios, true);
+//  foreach ($usuariosArray as $usuario){
+//    if($id==$usuario["id"]){
+//      return $usuario;
+//     }
+//   }
+//   return null;
+// }
+
+function buscarPorID($id) {
+  global $db;
+  $consulta = $db->prepare("SELECT * FROM usuarios WHERE id = :id");
+  $consulta->bindValue(":id", $id);
+  $consulta->execute();
+
+  return $consulta->fetch(PDO::FETCH_ASSOC);
 }
 
 //*Login
@@ -160,7 +210,7 @@ if ($datosFinales["password"] == "") {
   $errores["password"] = "La contraseña no puede estar vacia";
 }
 else {
-$usuario = buscarPorEmail($datosFinales["email"]);
+$usuario = buscarPorEmail($datosFinales["email"]); //busca los datos del usuario de la base de datos
   if($datosFinales["password"] !== NULL) {
     if(!password_verify($datosFinales["password"], $usuario["password"])) {
     $errores["password"] = "Contraseña incorrecta";
@@ -171,13 +221,14 @@ return $errores;
 }
 
 function loguearUsuario($email, $recordarme){
-  $usuarioLogueado = buscarPorEmail($email);
-  $_SESSION["usuario"] = $usuarioLogueado["usuario"];
+  $usuarioLogueado = buscarPorEmail($email); //busca los datos del usuario de la base de datos
+  $_SESSION["usuario"] = $usuarioLogueado["first_name"];
   $_SESSION["email"] = $usuarioLogueado["email"];
   if($recordarme) {
-    setcookie("usuario", $usuarioLogueado["usuario"], time() + 60);
+    setcookie("usuario", $usuarioLogueado["first_name"], time() + 60);
     setcookie("email", $usuarioLogueado["email"], time() + 60); 
   }
+  
 }
 
 function traerFoto() {
