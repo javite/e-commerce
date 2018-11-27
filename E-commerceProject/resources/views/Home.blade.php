@@ -1,12 +1,3 @@
-<?php
-require_once("funciones.php");
-$usuario="";
-
-if(isset($_SESSION["usuario"])) {
-  $usuario = $_SESSION["usuario"];
-}
-
-?>
 
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
@@ -21,29 +12,20 @@ if(isset($_SESSION["usuario"])) {
     <header>
         <nav class="nav">
             <img class="logo" src="img/logo.png" alt="">
-             <?php if($usuario == "") :?>
-            <ul class="login">
-                <li>
-                    <a class="registro" href="registro.php">Registrese</a>
-                </li>
-                <li>
-                    <a class="ingreso" href="login.php">Login</a>
-                </li>
-            </ul>
-          <?php else : ?>
-            <div class="logeado">
-            <ul class="logout">
-                <li class="registro">
-                 <a class="registro" href="detalleUsuario.php"><?="Hola"." ".$usuario."!"?></a> 
-                </li>
-                  <img src="" alt="">
-                  <li class="logout">
-                  <a class="logeado" href="logout.php">Logout</a>
-                 </li>
-            </ul>
+        @if (Route::has('login'))
+            <div class="top-right links">
+                @auth
+                    <a href="{{ url('/home') }}">Home</a>
+                @else
+                    <a href="{{ route('login') }}">Login</a>
+
+                    @if (Route::has('register'))
+                        <a href="{{ route('register') }}">Register</a>
+                    @endif
+                @endauth
             </div>
-<?php
-        endif; ?>
+        @endif
+
         </nav>
         <form class="buscadorForm" action="#" method="get">
             <input class="buscadorInput" type="search" placeholder="Buscar...">

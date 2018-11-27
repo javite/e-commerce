@@ -1,0 +1,366 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-image: url(../img/background.jpg);
+    font-family: "Quicksand", sans-serif;
+}
+
+
+/***********************
+ * Barra superior
+ ***********************/
+
+header {
+    height: auto;
+    width: 100%;
+    margin: 0 auto;
+    position: sticky;
+    top: 0;
+    z-index: 21;
+}
+
+nav {
+    background-color: #00a4ff;
+    margin: 0 auto;
+    width: 100%;
+    height: 9vh;
+    padding-top: 1px;
+    padding-left: 10px;
+    padding-right: 10px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    align-items: center;
+    z-index: 20;
+}
+
+img.logo {
+    width: 150px;
+    height: 40px;
+}
+
+h2.cabecera {
+    text-align: center;
+    color: #34495E;
+    font-style: bold;
+    font-size: 12px;
+}
+
+.buscadorForm {
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    background-color: #00a4ff;
+    padding: 10px;
+    justify-content: end;
+}
+
+.buscadorInput {
+    -webkit-box-sizing: content-box;
+    -moz-box-sizing: content-box;
+    box-sizing: content-box;
+    height: 27px;
+    padding: 0 4% 0px;
+    border-color: #888;
+    /* border-radius: 35px; */
+    border-top-left-radius: 35px;
+    border-bottom-left-radius: 35px;
+    border-style: solid;
+    border-width: 1px;
+    color: #333;
+    font-family: 'Helvetica', sans-serif;
+    font-size: 16px;
+    width: 50%;
+    min-width: 140px;
+}
+
+.buscadorInput:focus {
+    outline: none;
+    border-color: #333;
+}
+
+.buscadorInput:focus.buscadorSubmit {
+    color: #333;
+}
+
+.buscadorSubmit:hover {
+    color: #333;
+    cursor: pointer;
+}
+
+.buscadorSubmit {
+    display: block;
+    width: 45px;
+    padding: 0;
+    border: none;
+    background: white;
+    color: #888;
+    border: solid 1px  #888;
+    font-family: 'Helvetica', sans-serif;
+    font-size: 16px;
+    line-height: normal;
+    /* border-radius: 20px; */
+    border-top-right-radius: 35px;
+    border-bottom-right-radius: 35px;
+    height: 29px;
+    margin-right: 10px;
+}
+
+a.carrito {
+    height: 20%;
+    /* width: 15%; */
+}
+
+img.carrito {
+    /* float: right; */
+    /* margin-right: -5%; */
+    height: auto;
+    border-radius: 80%;
+    width: 30px;
+    padding-left: 2px;
+}
+
+ul.login {
+    list-style-type: none;
+    display: flex;
+    padding: 10px;
+}
+ul.logout {
+    list-style-type: none;
+    display: flex;
+    padding: 10px;
+}
+a.logeado {
+    text-decoration: none;
+    color: white;
+    padding-right: 5px;
+}
+li.saludo {
+     text-decoration: none;
+     color: white;
+     padding-right: 5px;
+     border-right: white solid 1px;
+     padding-right: 5px;
+   }
+
+li.logout {
+  padding-left: 5px;
+}
+
+div.logeado {
+  text-align: center;
+  padding-top: 1px;
+
+}
+
+a.registro {
+    text-decoration: none;
+    color: white;
+    border-right: white solid 1px;
+    padding-right: 5px;
+}
+
+a.ingreso {
+    text-decoration: none;
+    color: white;
+    padding-left: 5px;
+}
+
+::-webkit-input-placeholder {
+    color: #888;
+}
+
+input:-moz-placeholder {
+    color: #888
+}
+
+
+/****************
+ barra de filtros
+ ****************/
+
+section.divselec {
+    height: auto;
+    margin-top: 0;
+    margin-bottom: 10px; 
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.89);
+    display: flex;
+    border: 1px solid lightgray;
+}
+
+input {
+    width: auto;
+    padding-left: 2px;
+}
+
+.buttonOpciones {
+    margin-top: 10px;
+}
+
+select {
+    width: 110%;
+    font-size: 15px;
+    margin-right: 10px;
+}
+
+div.filtros {
+    text-align: center;
+    width: 50%;
+    height: auto;
+    padding-left: 5%;
+}
+
+form.categoria {
+    /* width: 70%; */
+    padding-top: 2%;
+    display: flex;
+}
+
+form.precio {
+    /* width: 70%; */
+    padding-top: 5%;
+    display: flex;
+}
+
+div.seleccion {
+    width: 50%;
+    height: auto;
+    padding-bottom: 1%;
+    padding-left: 3%;
+}
+
+span{
+    font-size: 14px;
+}
+select{
+    font-size: 14px;
+}
+
+.radioButton {
+    font-family: arial;
+}
+
+
+/***********************
+Arrancan los artículos
+***********************/
+
+section {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin: 0 auto;
+}
+
+article {
+    width: 90%;
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: column;
+    justify-content: space-between;
+    ;
+    background-color: white;
+    margin-bottom: 10px;
+}
+
+div.imagen {
+    width: 100%;
+    position: relative;
+    text-align: center;
+}
+
+div.imagen img {
+    width: 100%;
+    height: auto;
+    border-radius: 20px;
+}
+
+a.zoom {
+    text-decoration: none;
+    position: absolute;
+    width: 50%;
+    font-size: x-large;
+    top: 0%;
+    left: 25%;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.5);
+    text-align: center;
+    border-radius: 5%;
+}
+
+.datosProducto {
+    border: 1px lightgray solid;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    border-radius: 20px;
+}
+
+.descripcion {
+    width: 75%;
+}
+
+div.descripcion h2 {
+    padding: 3px;
+}
+
+div.descripcion p {
+    text-align: left;
+    font-size: 13px;
+    padding: 3px;
+}
+
+.valor {
+    text-align: center;
+    font-style: italic;
+    color: #00a4ff;
+    margin-right: 5px;
+}
+
+h4 {
+    padding-left: 3%;
+}
+
+footer {
+    height: 70px;
+    width: 100%;
+    background-color: #333;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+}
+.footer{
+    font-size: 11px;
+    color: white;
+}
+.img-usuario{
+    border-radius: 50%;
+}
+
+@media (min-width: 576px) {
+    section {
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+    }
+    article {
+        width: 48%;
+        flex-direction: column;
+        margin-bottom: 10px;
+    }
+    .valor {
+        padding-left: 0%;
+    }
+}

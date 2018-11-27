@@ -12,5 +12,15 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('home');
 });
+
+// Route::get('/login', );
+
+Route::get('/register', 'registercontroller@');
+
+// Route::get("/agregarPelicula", "PeliculasController@agregar");
+// Route::post("/agregarPelicula", "PeliculasController@almacenar");
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
