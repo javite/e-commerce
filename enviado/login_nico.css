@@ -1,0 +1,154 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-image: url(../img/background.jpg);
+    font-family: sans-serif;
+}
+
+
+/* nav{
+  background-color:red;
+  margin: 0 auto;
+  width: 80%;
+  height: 7vh;
+  padding-top: 1px;
+  padding-left: 10px;
+  padding-right: 10px;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  align-content: center;
+
+} */
+
+header {
+    /* background-size: 100%; */
+    height: auto;
+    width: 100%;
+    margin: 0 auto;
+    border: 0px;
+    border-style: solid;
+    position: sticky;
+    top: 0;
+    z-index: 20;
+    min-width: 300px;
+}
+
+nav {
+    background-color: #00a4ff;
+    margin: 0 auto;
+    width: 100%;
+    height: 11vh;
+    padding-top: 1px;
+    padding-left: 10px;
+    padding-right: 10px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    align-items: center;
+}
+
+img.logo {
+    height: 30px;
+}
+
+ul.login {
+    list-style-type: none;
+    display: flex;
+    padding: 10px;
+}
+
+a.registro {
+    text-decoration: none;
+    color: white;
+    padding-right: 5px;
+}
+
+h1 {
+    font-size: 2em;
+    min-width: 210px;
+}
+
+h2 {
+    font-size: 1.5em;
+    min-width: 210px;
+}
+
+ul.registro {
+    list-style-type: none;
+}
+
+a.nav {
+    text-decoration: none;
+    color: white;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: center;
+}
+
+
+
+
+a.logo {
+    display: block;
+}
+
+section {
+    max-width: 350px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+}
+
+form div {
+    margin-top: 20px;
+}
+
+.contenedor-form {
+    min-width: 210px;
+}
+
+button.botones {
+    height: 35px;
+    width: 35%;
+    border-radius: 8px;
+    background-color: #00a4ff;
+    color: white;
+    border: 0px;
+    font-size: 14px;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+p.mensaje {
+    color: red;
+    display: none;
+}
+
+label.formulario {
+    margin-bottom: 10px;
+}
+
+.formulario input {
+    height: 4vh;
+    width: 100%;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+input.recordarme {}
+
+span.recordarme {}
+
+.recordarme {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.sin-registro {
+    font-size: 12px;
+}
