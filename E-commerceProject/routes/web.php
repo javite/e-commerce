@@ -12,20 +12,8 @@
 */
 
 Route::get('/', function () {
-<<<<<<< HEAD
-    return view('home');
-});
-
-// Route::get('/login', );
-
-Route::get('/register', 'registercontroller@');
-
-// Route::get("/agregarPelicula", "PeliculasController@agregar");
-// Route::post("/agregarPelicula", "PeliculasController@almacenar");
-Auth::routes();
-
-Route::get('/home', 'HomeController@index')->name('home');
-=======
     return view('welcome');
 });
->>>>>>> master
+
+Route::get('productos','productosController@list');
+Route::get('categorias','categoriasController@list');
