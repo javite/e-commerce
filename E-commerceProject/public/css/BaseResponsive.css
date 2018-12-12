@@ -21,7 +21,7 @@ header {
     z-index: 21;
 }
 
-nav {
+.nav {
     background-color: #00a4ff;
     margin: 0 auto;
     width: 100%;
@@ -100,7 +100,7 @@ h2.cabecera {
     border: none;
     background: white;
     color: #888;
-    border: solid 1px  #888;
+    border: solid 1px #888;
     font-family: 'Helvetica', sans-serif;
     font-size: 16px;
     line-height: normal;
@@ -130,32 +130,34 @@ ul.login {
     display: flex;
     padding: 10px;
 }
+
 ul.logout {
     list-style-type: none;
     display: flex;
     padding: 10px;
 }
+
 a.logeado {
     text-decoration: none;
     color: white;
     padding-right: 5px;
 }
+
 li.saludo {
-     text-decoration: none;
-     color: white;
-     padding-right: 5px;
-     border-right: white solid 1px;
-     padding-right: 5px;
-   }
+    text-decoration: none;
+    color: white;
+    padding-right: 5px;
+    border-right: white solid 1px;
+    padding-right: 5px;
+}
 
 li.logout {
-  padding-left: 5px;
+    padding-left: 5px;
 }
 
 div.logeado {
-  text-align: center;
-  padding-top: 1px;
-
+    text-align: center;
+    padding-top: 1px;
 }
 
 a.registro {
@@ -187,7 +189,7 @@ input:-moz-placeholder {
 section.divselec {
     height: auto;
     margin-top: 0;
-    margin-bottom: 10px; 
+    margin-bottom: 10px;
     margin-left: auto;
     margin-right: auto;
     width: 100%;
@@ -237,10 +239,11 @@ div.seleccion {
     padding-left: 3%;
 }
 
-span{
+span {
     font-size: 14px;
 }
-select{
+
+select {
     font-size: 14px;
 }
 
@@ -253,12 +256,23 @@ select{
 Arrancan los artículos
 ***********************/
 
-section {
+
+/* section {
     width: 100%;
     display: flex;
+    
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: 0 auto;
+} */
+
+.section-articulos {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-around;
-    margin: 0 auto;
+    background-color: white
 }
 
 article {
@@ -267,9 +281,42 @@ article {
     flex-wrap: nowrap;
     flex-direction: column;
     justify-content: space-between;
-    ;
     background-color: white;
     margin-bottom: 10px;
+}
+
+.card {
+    margin: 10px;
+}
+
+.card-body {
+    background-color: #ece9e9;
+}
+
+.card:hover .comprar {
+    opacity: 1;
+}
+
+.comprar {
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(51, 51, 51, 0.7);
+    -webkit-transition: all 0.3s ease-in 0s;
+    -moz-transition: all 0.3s ease-in 0s;
+    -ms-transition: all 0.3s ease-in 0s;
+    -o-transition: all 0.3s ease-in 0s;
+    transition: all 0.3s ease-in 0s;
+}
+
+.img-container {
+    position: relative;
 }
 
 div.imagen {
@@ -286,15 +333,13 @@ div.imagen img {
 
 a.zoom {
     text-decoration: none;
-    position: absolute;
-    width: 50%;
-    font-size: x-large;
-    top: 0%;
-    left: 25%;
-    color: white;
-    background-color: rgba(0, 0, 0, 0.5);
+    font-size: 15px;
     text-align: center;
     border-radius: 5%;
+    color: white;
+    border: 1px solid white;
+    width: 50%;
+    padding: 5px;
 }
 
 .datosProducto {
@@ -320,10 +365,7 @@ div.descripcion p {
 }
 
 .valor {
-    text-align: center;
-    font-style: italic;
-    color: #00a4ff;
-    margin-right: 5px;
+    color: #ff4800;
 }
 
 h4 {
@@ -340,22 +382,18 @@ footer {
     justify-content: center;
     align-content: center;
 }
-.footer{
+
+.footer {
     font-size: 11px;
     color: white;
 }
-.img-usuario{
+
+.img-usuario {
     border-radius: 50%;
 }
 
 @media (min-width: 576px) {
-    section {
-        width: 100%;
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-around;
-    }
-    article {
+    .article {
         width: 48%;
         flex-direction: column;
         margin-bottom: 10px;

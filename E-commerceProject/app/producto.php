@@ -10,7 +10,17 @@ class producto extends Model
     public $guarded = [];
 
     public function marcas(){
-        return $this->hasMany(Marcas::class,'marca_id');
+
+        return $this->belongsTo(Marcas::class,'marca_id');
+        
     }
+
+    public function categorias(){
+
+        return  $this->belongsToMany(Categorias::class, 'productos-categorias','producto_id','categoria_id');
+
+    }
+    
+
 
 }

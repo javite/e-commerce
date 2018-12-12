@@ -11,9 +11,10 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('home');
+// });
 
-Route::get('productos','productosController@list');
-Route::get('categorias','categoriasController@list');
+Route::get('/','productosController@list'); //trae todos los productos
+Route::get('categoria/{id}','categoriasController@buscarPorID'); // trae todas las categorias
+Route::get('detalleProducto/{id}','productosController@detalle'); //trae un producto con ese ID

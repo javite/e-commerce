@@ -1,185 +1,27 @@
+@extends("plantilla")
 
-<!DOCTYPE html>
-<html lang="en" dir="ltr">
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/BaseResponsive.css">
-    <title>REGAL.AR</title>
-</head>
+@section("titulo")
+REGAL.AR
+@endsection
 
-<body>
-    <header>
-        <nav class="nav">
-            <img class="logo" src="img/logo.png" alt="">
-        @if (Route::has('login'))
-            <div class="top-right links">
-                @auth
-                    <a href="{{ url('/home') }}">Home</a>
-                @else
-                    <a href="{{ route('login') }}">Login</a>
 
-                    @if (Route::has('register'))
-                        <a href="{{ route('register') }}">Register</a>
-                    @endif
-                @endauth
-            </div>
-        @endif
-
-        </nav>
-        <form class="buscadorForm" action="#" method="get">
-            <input class="buscadorInput" type="search" placeholder="Buscar...">
-            <input class="buscadorSubmit" type="submit" value="IR!" />
-            <a class="carrito" href="#">
-                <img class="carrito" src="img/carrito.jpg" alt="">
-            </a>
-        </form>
-    </header>
-    <section class="divselec">
-        <div class="filtros">
-        <form class="categoria" action="" method="get">
-            <label for="categoria"></label>
-            <select id="categoria" name="categoria">
-                <option value="cat1">Categoría 1</option>
-                <option value="cat2">Categoría 2</option>
-                <option value="cat3">Categoría 3</option>
-                <option value="cat4">Categoría 4</option>
-                <option value="cat5">Categoría 5</option>
-                <option value="cat6">Categoría 6</option>
-                <option value="cat7">Categoría 7</option>
-            </select>
-            <input type="submit" value="Filtrar">
-        </form>
-        <form class="precio" action="" method="get">
-          <label for="precio"></label>
-          <select id="precio" name="precio">
-            <option value="max500">Hasta $500 </option>
-            <option value="max1500">$500 a $1500 </option>
-            <option value="max2500">$1500 a $2500 </option>
-            <option value="min2500">Más de $2500 </option>
-          </select>
-          <input type="submit" value="Filtrar">
-        </form>
-        </div>
-        <div class="seleccion">
-            <form action="" method="get">
-                <input class="radioButton" type="radio" name="opciones" value="s">
-                <span>En Liquidación</span>
-                <br>
-                <input class="radioButton" type="radio" name="opciones" value="n">
-                <span>Lo Más Vendido</span>
-                <br>
-                <input class="radioButton" type="radio" name="opciones" value="n">
-                <span>Novedades</span>
-                <br>
-                <input class="buttonOpciones" type="submit" value="Aplicar">
-            </form>
-        </div>
-    </section>
-
+@section("cuerpo")
     <section class="section-articulos">
-        <article class="articulos">
-            <div class="imagen">
-                <img src="img/producto-1.jpg" alt="">
-                <a class="zoom" href="#">Detalle</a>
+    @foreach ($productos as $producto)
+    <div class="card" style="width: 18rem;">
+        <div class="img-container"> 
+            <img class="card-img-top" src="img/producto-{{$producto->id}}.jpg" alt="imagen producto">
+            <div class="comprar">
+                <a class="zoom" href="/detalleProducto/{{$producto->id}}">COMPRAR</a>
             </div>
-            <div class="datosProducto">
-                <div class="descripcion">
-                    <h2 class="nombre">Producto</h2>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation </p>
-                </div>
-                <div class="precio">
-                    <h2 class="valor">$1000</h2>
-                </div>
-            </div>
-        </article>
-
-        <article class="articulos">
-            <div class="imagen">
-                <img src="img/producto-2.jpg" alt="">
-                <a class="zoom" href="#">Detalle</a>
-            </div>
-            <div class="datosProducto">
-                <div class="descripcion">
-                    <h2 class="nombre">Producto</h2>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation </p>
-                </div>
-                <div class="precio">
-                    <h2 class="valor">$1000</h2>
-                </div>
-            </div>
-        </article>
-
-        <article class="articulos">
-            <div class="imagen">
-                <img src="img/producto-3.jpg" alt="">
-                <a class="zoom" href="#">Detalle</a>
-            </div>
-            <div class="datosProducto">
-                <div class="descripcion">
-                    <h2 class="nombre">Producto</h2>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation </p>
-                </div>
-                <div class="precio">
-                    <h2 class="valor">$1000</h2>
-                </div>
-            </div>
-        </article>
-
-        <article class="articulos">
-            <div class="imagen">
-                <img src="img/producto-4.jpg" alt="">
-                <a class="zoom" href="#">Detalle</a>
-            </div>
-            <div class="datosProducto">
-                <div class="descripcion">
-                    <h2 class="nombre">Producto</h2>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation </p>
-                </div>
-                <div class="precio">
-                    <h2 class="valor">$1000</h2>
-                </div>
-            </div>
-        </article>
-
-        <article class="articulos">
-            <div class="imagen">
-                <img src="img/producto-5.jpg" alt="">
-                <a class="zoom" href="#">Detalle</a>
-            </div>
-            <div class="datosProducto">
-                <div class="descripcion">
-                    <h2 class="nombre">Producto</h2>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation </p>
-                </div>
-                <div class="precio">
-                    <h2 class="valor">$1000</h2>
-                </div>
-            </div>
-        </article>
-
-        <article class="articulos">
-            <div class="imagen">
-                <img src="img/producto-6.jpg" alt="">
-                <a class="zoom" href="#">Detalle</a>
-            </div>
-            <div class="datosProducto">
-                <div class="descripcion">
-                    <h2 class="nombre">Producto</h2>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation </p>
-                </div>
-                <div class="precio">
-                    <h2 class="valor">$1000</h2>
-                </div>
-            </div>
-        </article>
+        </div>
+        <div class="card-body">
+            <h3 class="card-title">{{$producto->nombre}}</h3>
+            <h5 class="valor">${{$producto->precio}}</h5>
+            <p class=".card-subtitle">6 cuotas sin INTERES</p>
+        </div>
+    </div>
+    @endforeach
+        
     </section>
-    <footer>
-        <p class="footer">Copyright © 2018 Digital House - Curso Blend Full Stack</p>
-    </footer>
-
-
-
-</body>
-
-</html>
+    @endsection

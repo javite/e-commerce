@@ -7,15 +7,12 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>Producto</h1>
+    <h1>Categorias</h1>
     <ul>
-        @foreach ($productos as $producto)
-        <li>{{$producto->nombre}}  {{$producto->precio}} {{$producto->descripcion}}  
-        </li>
-        @endforeach
         @foreach ($categorias as $categoria)
-        <li>{{$categoria->nombre}}</li>
-        @endforeach
+        <li>{{$categoria->nombre}}        
+        </li>
+        @endforeach      
     </ul>
 </body>
 </html>
