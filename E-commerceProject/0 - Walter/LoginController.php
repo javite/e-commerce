@@ -6,7 +6,6 @@ use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Auth;
 use Illuminate\Http\Request;
-use App\categoria;
 
 class LoginController extends Controller
 {
@@ -22,7 +21,6 @@ class LoginController extends Controller
     */
 
     use AuthenticatesUsers;
-    
 
     /**
 
@@ -50,17 +48,13 @@ class LoginController extends Controller
     public function showLogin()
    {
        // Ver si hay sesión activa
-       $categorias = Categoria::all();
-       $vac2 = compact("categorias");
        if (Auth::check())
        {
            // Si tenemos sesión activa ir a la home
-           return Redirect::to('home',$vac2);
+           return Redirect::to('home');
        }
-
        // Si no hay sesión activa mostramos el formulario
-       return View::make('login',$vac2);
-    
+       return View::make('login');
    }
 
    public function postLogin()
@@ -85,7 +79,7 @@ class LoginController extends Controller
    {
      Auth::logout();
      // Volvemos al login y mostramos un mensaje indicando que se cerró la sesión
-     return Redirect::to('home');
+     return Redirect::to('login')->with('error_message', 'Hasta pronto!');
    }
 
 }

@@ -3,6 +3,7 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use app\categoria;
 
 class producto extends Model
 {
@@ -11,13 +12,13 @@ class producto extends Model
 
     public function marcas(){
 
-        return $this->belongsTo(Marcas::class,'marca_id');
+        return $this->belongsTo(Marca::class,'marca_id');
         
     }
 
     public function categorias(){
 
-        return  $this->belongsToMany(Categorias::class, 'productos-categorias','producto_id','categoria_id');
+        return  $this->belongsTo(Categoria::class, 'categoria_id');
 
     }
     

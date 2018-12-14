@@ -1,6 +1,28 @@
 {{-- @extends('layouts.app')
 
 @section('content') --}}
+  <?php
+  // require_once("funciones.php");
+  //
+  // /*si el usuario esta logueado y se entra desde la barra del navegador te redirecciona a la home*/
+  // if(isset($_SESSION["usuario"])){
+  //     header("Location: Home.php");
+  //     exit;
+  //   }
+  //
+  // if ($_POST) {
+  //   $errores = validarLogin($_POST);
+  //   if (empty($errores)) {
+  //     if(isset($_POST["recordarme"])){
+  //         $recordarme = true;
+  //     } else {
+  //         $recordarme = false;
+  //     }
+  //     loguearUsuario($_POST["email"],$recordarme); //guarda en $_SESSION["usuario] el nombre del usuario logueado.
+  //     header("location:Home.php");exit;
+  //   }
+  // }
+  //?>
 
   <!DOCTYPE html>
   <html lang="en" dir="ltr">
@@ -25,7 +47,7 @@
       <section>
           <h1>BIENVENIDO!</h1>
           <h2>Ingresá tus datos</h2>
-          <form class="contenedor-form" action="login" method="post">
+          <form class="contenedor-form" action="home" method="post">
             {{csrf_field()}}
               <div class="formulario">
                   <label class="formulario" for="email">Email:</label>

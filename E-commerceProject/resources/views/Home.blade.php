@@ -10,7 +10,7 @@ REGAL.AR
     @foreach ($productos as $producto)
     <div class="card" style="width: 18rem;">
         <div class="img-container"> 
-            <img class="card-img-top" src="img/producto-{{$producto->id}}.jpg" alt="imagen producto">
+            <img class="card-img-top" src="/img/producto-{{$producto->id}}.jpg" alt="imagen producto">
             <div class="comprar">
                 <a class="zoom" href="/detalleProducto/{{$producto->id}}">COMPRAR</a>
             </div>

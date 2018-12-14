@@ -1,0 +1,12 @@
+
+El archivo AuthenticatesUsers.php hay que ponerlo dentro de la siguiente ruta:
+
+\vendor\laravel\framework\src\Illuminate\Foundation\Auth\
+
+
+El archivo AppServiceProvider.php hay que ponerlo dentro de la siguiente ruta:
+
+\app\Providers\
+
+
+Javi.. fijate la tabla de usuarios en la base de datos.. te voy a pasar una foto.. pero me volví loco porque el create_date y el update_date había que cambiarles el nombre por create_at y update_at..... te paso una foto x whap para que veas como quedaron las tablas..

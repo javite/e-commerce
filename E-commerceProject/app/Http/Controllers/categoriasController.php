@@ -11,6 +11,10 @@ class categoriasController extends Controller
     public function buscarPorID($id){
         $productos = Producto::where("categoria_id","=", "$id")->get(); 
         $vac = compact("productos");
-        return view("productos", $vac);
+        
+        $categorias = Categoria::all();
+        $vac2 = compact("categorias");
+        
+        return view("home", $vac,$vac2 );
     }
 }
