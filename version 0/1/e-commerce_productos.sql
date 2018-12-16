@@ -1,6 +1,6 @@
--- MySQL dump 10.13  Distrib 5.7.12, for Win32 (AMD64)
+-- MySQL dump 10.13  Distrib 5.7.17, for Win64 (x86_64)
 --
--- Host: localhost    Database: e-commerce
+-- Host: 127.0.0.1    Database: e-commerce
 -- ------------------------------------------------------
 -- Server version	5.5.5-10.1.35-MariaDB
 
@@ -45,7 +45,7 @@ CREATE TABLE `productos` (
 
 LOCK TABLES `productos` WRITE;
 /*!40000 ALTER TABLE `productos` DISABLE KEYS */;
-INSERT INTO `productos` VALUES (1,'Samsung S8','Liberado 64 Gb de memoria, cuatros nucleos',32000,1,'2011-12-18 00:00:00','2011-12-18 00:00:00',1),(2,'Tablet Noblex','Pantalla 7\" 32Gb de memoria.',8000,2,'2011-12-18 00:00:00','2011-12-18 00:00:00',2),(3,'Desayuno','Desayuno en a cama con bailarinas exoticas',1500,3,'2011-12-18 00:00:00','2011-12-18 00:00:00',2),(4,'Zapatillas','Running Air',2500,3,'2011-12-18 00:00:00','2011-12-18 00:00:00',3);
+INSERT INTO `productos` VALUES (1,'Samsung S8','Liberado 64 Gb de memoria, cuatros nucleos',32000,1,'2011-12-18 00:00:00','2011-12-18 00:00:00',NULL),(2,'Tablet Noblex','Pantalla 7\" 32Gb de memoria.',8000,2,'2011-12-18 00:00:00','2011-12-18 00:00:00',NULL),(3,'Desayuno','Desayuno en a cama con bailarinas exoticas',1500,3,'2011-12-18 00:00:00','2011-12-18 00:00:00',NULL),(4,'Zapatillas','Running Air',2500,3,'2011-12-18 00:00:00','2011-12-18 00:00:00',NULL);
 /*!40000 ALTER TABLE `productos` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -58,4 +58,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2018-12-15 20:32:37
+-- Dump completed on 2018-12-13 10:36:10

@@ -8,6 +8,8 @@
     <script src="/js/main.js"></script>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,600,700" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP" crossorigin="anonymous">
+
     <title>
     @yield("titulo")
     </title>
@@ -15,6 +17,27 @@
 
 <body>
     <header>
+        <div class="top">
+                <div class="top-right links">
+                    @if (Route::has('login'))
+                            @auth
+                                <form id="logout-form" action="{{ route('logout') }}" method="POST" >
+                                            @csrf
+                                    <button type="submit" class="logout">Logout</button>
+                                </form>
+                            @else
+                                <a href="{{ route('login') }}">Login</a>
+
+                            @if (Route::has('register'))
+                                <a href="{{ route('register') }}">Register</a>
+                            @endif
+                            @endauth
+                    @endif
+                    <div class="cart">
+                        <a href="/cart"><i class="fas fa-shopping-cart"></i></a>
+                    </div>
+                </div>
+        </div>
         <nav class="nav">
             <a href="/"><img class="logo" src="/img/logo.png" alt=""></a>
             <div class="search-container flex-container center">
@@ -22,27 +45,14 @@
                         <input id="search" placeholder="Buscar" type="search" name="q" value="" class="inputField">
                         <input class="magnifier" type="image" src="/img/search.svg" value="Buscar">
                     </form>
-                </div>
-                @if (Route::has('login'))
-                    <div class="top-right links">
-                        @auth
-                            <a href="{{ route('logout') }}">Logout</a>
-                        @else
-                            <a href="{{ route('login') }}">Login</a>
-
-                        @if (Route::has('register'))
-                            <a href="{{ route('register') }}">Register</a>
-                        @endif
-                        @endauth
-                    </div>
-                @endif
+            </div>
         </nav>
                    
         <nav class="navbar-nav justify-content-center navbar-expand-md navbar-dark bg-primary">  
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="collapse container navbar-collapse" id="navbarNavAltMarkup">
                 <div class="navbar-nav">
                     @foreach($categorias as $categoria)
                     <a class="nav-item nav-link active" href="/categoria/{{$categoria->id}}">{{$categoria->nombre}}</a>
@@ -66,7 +76,7 @@
                         height="326" width="628" frameborder="0" style="border:0" allowfullscreen></iframe>
                 </div>
                 <div class="sucursal-data-container">
-                    <div class="sucursal" data-name="nunez">
+                    <div class="sucursal selected" data-name="nunez">
                         <h2 class="sucursal-name">NUÑEZ</h2>
                         <P class="sucursal-data">Monroe 860| CP10001 | CABA</P>
                         <P class="sucursal-data">Tel: +54 11 5263-7400</P>
@@ -87,7 +97,7 @@
     
         <div class="questions fluid-container">
             <div class="questions-container fix-container ">
-                <div class="col-md-4 col-sm-4 center-text col-xs-12">
+                <div class="col-md-4center-text col-xs-12">
                     <div class="question">
                         <div class="service-icon">
                             <img class="question-img" src="/img/question-mark.png" alt="">
@@ -98,7 +108,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-md-4 col-sm-4 center-text col-xs-12">
+                <div class="col-md-4  center-text col-xs-12">
                     <div class="question">
                         <div class="service-icon">
                             <img class="question-img" src="/img/truck.png" alt="">
@@ -109,7 +119,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-md-4 col-sm-4 center-text col-xs-12">
+                <div class="col-md-4 center-text col-xs-12">
                     <div class="question">
                         <div class="service-icon">
                             <img class="question-img" src="/img/cards.png" alt="">
@@ -125,12 +135,12 @@
     
         <div class="bottom fix-container">
             <div class="bottom-container">
-                <div class="col-md-4 col-sm-4 col-xs-12 flex-container center">
+                <div class="col-md-4 col-xs-12 flex-container center">
                     <div class="us-container">
                         <h3 class="bottom-title">NOSOTROS</h3>
                         <ul>
                             <li>
-                                <a class="us-link" href="/quienes-somos_1xST">Quienes Somos</a>
+                                <a class="us-link" href="/quienes-somos">Quienes Somos</a>
                             </li>
                             <li>
                                 <a class="us-link" href="/contact">Trabaja con Nosotros</a>
@@ -141,7 +151,7 @@
                         </ul>
                     </div>
                 </div>
-                <div class="col-md-4 col-sm-4 col-xs-12 flex-container center">
+                <div class="col-md-4  col-xs-12 flex-container center">
                     <div class="us-container">
                         <h3 class="bottom-title">CATEGORIAS</h3>
                         <ul>
@@ -153,7 +163,7 @@
                         <ul>
                     </div>
                 </div>
-                <div class="col-md-4 col-sm-4 col-xs-12 flex-container center">
+                <div class="col-md-4 col-xs-12 flex-container center">
                     <div class="us-container">
                         <h3 class="bottom-title">ENTERATE DE NUESTRAS NOVEDADES</h3>
                         <P class="us-link">Recibí alertas de descuentos y nuevos productos</P>

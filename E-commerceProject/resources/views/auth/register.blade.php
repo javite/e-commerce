@@ -1,77 +1,140 @@
-@extends('layouts.app')
+{{-- @extends('layouts.app')
 
-@section('content')
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">{{ __('Register') }}</div>
+@section('content') --}}
 
-                <div class="card-body">
-                    <form method="POST" action="{{ route('register') }}">
-                        @csrf
 
-                        <div class="form-group row">
-                            <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('Name') }}</label>
+  <!DOCTYPE html>
+  <html lang="en" dir="ltr">
 
-                            <div class="col-md-6">
-                                <input id="name" type="text" class="form-control{{ $errors->has('name') ? ' is-invalid' : '' }}" name="name" value="{{ old('name') }}" required autofocus>
+  <head>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <link rel="stylesheet" href="/css/registro.css">
+      <title>Registro</title>
+  </head>
 
-                                @if ($errors->has('name'))
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $errors->first('name') }}</strong>
-                                    </span>
-                                @endif
-                            </div>
-                        </div>
+  <body>
+      <header>
+          <nav>
+              <a class="nav" href="home"><img class="logo" src="/img/logo.png" alt=""></a>
+              <ul class="login">
+                  <li>
+                      <a class="registro" href="login">¿Tenés una cuenta? Ingresá acá</a>
+                  </li>
+              </ul>
+          </nav>
+      </header>
 
-                        <div class="form-group row">
-                            <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('E-Mail Address') }}</label>
+      <section>
+          <h1>Crear una cuenta</h1>
+          <h2>Ingresá tus datos</h2>
 
-                            <div class="col-md-6">
-                                <input id="email" type="email" class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" name="email" value="{{ old('email') }}" required>
+          <form class="contenedor-form" action="/register" method="post" enctype="multipart/form-data">
+            {{csrf_field()}}
+              <div class="formulario">
 
-                                @if ($errors->has('email'))
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $errors->first('email') }}</strong>
-                                    </span>
-                                @endif
-                            </div>
-                        </div>
+                  <label class="formulario" for="usuario">Nombre de usuario:</label>
+                  <br>
 
-                        <div class="form-group row">
-                            <label for="password" class="col-md-4 col-form-label text-md-right">{{ __('Password') }}</label>
 
-                            <div class="col-md-6">
-                                <input id="password" type="password" class="form-control{{ $errors->has('password') ? ' is-invalid' : '' }}" name="password" required>
+                  <input  class="nombreDeUsuario" type="text" name="usuario"  value="{{old('usuario')}}" placeholder="ingrese su nombre de usuario" >
 
-                                @if ($errors->has('password'))
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $errors->first('password') }}</strong>
-                                    </span>
-                                @endif
-                            </div>
-                        </div>
 
-                        <div class="form-group row">
-                            <label for="password-confirm" class="col-md-4 col-form-label text-md-right">{{ __('Confirm Password') }}</label>
+              @if($errors->has('usuario'))
+                <span class="help-block">
+                  <strong>{{$errors->first('usuario')}}</strong>
+                </span>
+              @endif
 
-                            <div class="col-md-6">
-                                <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required>
-                            </div>
-                        </div>
+              </div>
+              <div class="formulario">
+                  <label class="formulario" for="email">Email:</label>
+                  <br>
 
-                        <div class="form-group row mb-0">
-                            <div class="col-md-6 offset-md-4">
-                                <button type="submit" class="btn btn-primary">
-                                    {{ __('Register') }}
-                                </button>
-                            </div>
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-@endsection
+                  </p>
+
+                  <input class="email" type="email" name="email" value="{{old('email')}}" placeholder="ingrese su e-mail" >
+
+                @if($errors->has('email'))
+                  <span class="help-block">
+                    <strong>{{$errors->first('email')}}</strong>
+                  </span>
+                @endif
+
+              </div>
+              <div class="formulario">
+                  <label class="formulario" for="password">Contraseña:</label>
+                  <br>
+
+                  <input class="password" type="password" name="password" id="password" value="" placeholder="ingrese su contraseña" >
+
+                @if($errors->has('password'))
+                  <span class="help-block">
+                    <strong>{{$errors->first('password')}}</strong>
+                  </span>
+                @endif
+              </div>
+              <div class="formulario">
+                  <label class="formulario" for="confirmation">Repetir contraseña:</label>
+                  <br>
+
+                <input class="password" type="password" name="password_confirmation" id="confirmation" value="" placeholder="repetir contraseña" >
+
+                @if($errors->has('password_confirmation'))
+                  <span class="help-block">
+                    <strong>{{$errors->first('password_confirmation')}}</strong>
+                  </span>
+                @endif
+              </div>
+              <div class="formulario">
+                  <label class="formulario" for="domicilio">Domicilio:</label>
+                  <br>
+
+                  </p>
+
+                  <input class="domicilio" type="text" name="domicilio" id="domicilio" value="{{old('domicilio')}}" placeholder="ingrese su domicilio" >
+                  @if($errors->has('domicilio'))
+                    <span class="help-block">
+                      <strong>{{$errors->first('domicilio')}}</strong>
+                    </span>
+                  @endif
+
+              </div>
+              <p class="sexo">Sexo</p>
+
+              </p>
+
+              <div class="sexo">
+                @if($errors->has('sexo'))
+                  <span class="help-block">
+                    <strong>{{$errors->first('sexo')}}</strong>
+                  </span>
+                @endif
+                  <span class="recordarme">Masculino</span>
+                  <input class="sexo" type="radio" name="sexo" value="m" @if(old("sexo") == "m") {{"checked"}} @endif>
+                  <span class="recordarme">Femenino</span>
+                  <input class="sexo" type="radio" name="sexo" value="f" @if(old("sexo") == "f") {{"checked"}} @endif>
+              </div>
+              <div class="formulario">
+
+                </p>
+
+              <input class="foto" type="file" name="foto" value="">
+              @if($errors->has('foto'))
+                <span class="help-block">
+                  <strong>{{$errors->first('foto')}}</strong>
+                </span>
+              @endif
+
+
+              </div>
+              <div class="boton">
+                  <button class="botones" type="submit" name="aceptar">Aceptar</button>
+              </div>
+
+
+      </section>
+  </body>
+
+  </html>
+{{-- @endsection --}}

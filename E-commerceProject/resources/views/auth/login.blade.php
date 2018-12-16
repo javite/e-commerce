@@ -14,7 +14,7 @@
   <body>
       <header>
           <nav class="nav">
-              <a class="nav" href="Home.php"><img class="logo" src="img/logo.png" alt=""></a>
+              <a class="nav" href="home"><img class="logo" src="/img/logo.png" alt=""></a>
               <ul class="login">
               <li>
                   <a class="registro" href="register">Crear una cuenta</a>

@@ -85,7 +85,7 @@ class LoginController extends Controller
    {
      Auth::logout();
      // Volvemos al login y mostramos un mensaje indicando que se cerró la sesión
-     return Redirect::to('home');
+     return redirect('home'); //return Redirect::to('home');
    }
 
 }

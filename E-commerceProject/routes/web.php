@@ -21,7 +21,7 @@ Route::get('categoria/{id}','categoriasController@buscarPorID'); // trae todas l
 Route::get('detalleProducto/{id}','productosController@detalle'); //trae un producto con ese ID
 Route::get('login', 'auth\LoginController@showLogin');
 Route::post('login', 'auth\LoginController@postLogin');
-Route::get('logout', 'auth\LoginController@logOut');
+//Route::post('logout', 'auth\LoginController@logOut');
 // Route::get('home', 'HomeController@index')->name('home');
 Auth::routes();
 
