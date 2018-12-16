@@ -79,7 +79,7 @@ class RegisterController extends Controller
       $nombreArchivo = basename($rutaAlmacenado);
 
         return User::create([
-            'usuario' => $data['usuario'],
+            'name' => $data['usuario'],
             'email' => $data['email'],
             'password' => bcrypt($data['password']),
             'domicilio' => $data['domicilio'],

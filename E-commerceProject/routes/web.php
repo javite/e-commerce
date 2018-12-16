@@ -22,6 +22,6 @@ Route::get('detalleProducto/{id}','productosController@detalle'); //trae un prod
 Route::get('login', 'auth\LoginController@showLogin');
 Route::post('login', 'auth\LoginController@postLogin');
 //Route::post('logout', 'auth\LoginController@logOut');
-// Route::get('home', 'HomeController@index')->name('home');
+//Route::get('home', 'HomeController@index')->name('home');
 Auth::routes();
 

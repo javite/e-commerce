@@ -25,6 +25,9 @@
                                             @csrf
                                     <button type="submit" class="logout">Logout</button>
                                 </form>
+                                <div class="cart">
+                                    <a href="/cart"><i class="fas fa-shopping-cart"></i></a>
+                                </div>
                             @else
                                 <a href="{{ route('login') }}">Login</a>
 
@@ -33,9 +36,7 @@
                             @endif
                             @endauth
                     @endif
-                    <div class="cart">
-                        <a href="/cart"><i class="fas fa-shopping-cart"></i></a>
-                    </div>
+                    
                 </div>
         </div>
         <nav class="nav">

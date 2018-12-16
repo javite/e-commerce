@@ -1,6 +1,6 @@
--- MySQL dump 10.13  Distrib 5.7.12, for Win32 (AMD64)
+-- MySQL dump 10.13  Distrib 5.7.17, for Win64 (x86_64)
 --
--- Host: localhost    Database: e-commerce
+-- Host: 127.0.0.1    Database: e-commerce
 -- ------------------------------------------------------
 -- Server version	5.5.5-10.1.35-MariaDB
 
@@ -16,29 +16,37 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `marcas`
+-- Table structure for table `productos`
 --
 
-DROP TABLE IF EXISTS `marcas`;
+DROP TABLE IF EXISTS `productos`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `marcas` (
+CREATE TABLE `productos` (
   `id` int(11) NOT NULL,
-  `nombre` varchar(45) NOT NULL,
+  `nombre` varchar(100) NOT NULL,
+  `descripcion` varchar(100) NOT NULL,
+  `precio` int(11) NOT NULL,
+  `marca_id` int(11) NOT NULL,
   `create_at` datetime NOT NULL,
   `update_at` datetime DEFAULT NULL,
-  PRIMARY KEY (`id`)
+  `categoria_id` int(11) DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `fk_productos_marca_idx` (`marca_id`),
+  KEY `fk_productos_categoria_idx` (`categoria_id`),
+  CONSTRAINT `fk_productos_categoria` FOREIGN KEY (`categoria_id`) REFERENCES `categorias` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  CONSTRAINT `fk_productos_marca` FOREIGN KEY (`marca_id`) REFERENCES `marcas` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `marcas`
+-- Dumping data for table `productos`
 --
 
-LOCK TABLES `marcas` WRITE;
-/*!40000 ALTER TABLE `marcas` DISABLE KEYS */;
-INSERT INTO `marcas` VALUES (1,'samsung','2011-12-18 00:00:00','2011-12-18 00:00:00'),(2,'noblex','2011-12-18 00:00:00','2011-12-18 00:00:00'),(3,'carolina','2011-12-18 00:00:00','2011-12-18 00:00:00'),(4,'Nike','2011-12-18 00:00:00','2011-12-18 00:00:00');
-/*!40000 ALTER TABLE `marcas` ENABLE KEYS */;
+LOCK TABLES `productos` WRITE;
+/*!40000 ALTER TABLE `productos` DISABLE KEYS */;
+INSERT INTO `productos` VALUES (1,'Samsung S8','Liberado 64 Gb de memoria, cuatros nucleos',32000,1,'2011-12-18 00:00:00','2011-12-18 00:00:00',1),(2,'Tablet Noblex','Pantalla 7\" 32Gb de memoria.',8000,2,'2011-12-18 00:00:00','2011-12-18 00:00:00',2),(3,'Desayuno','Desayuno en a cama con bailarinas exoticas',1500,3,'2011-12-18 00:00:00','2011-12-18 00:00:00',2),(4,'Zapatillas','Running Air',2500,3,'2011-12-18 00:00:00','2011-12-18 00:00:00',3);
+/*!40000 ALTER TABLE `productos` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
@@ -50,4 +58,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2018-12-12 19:05:41
+-- Dump completed on 2018-12-15 22:21:55

@@ -1,6 +1,6 @@
--- MySQL dump 10.13  Distrib 5.7.12, for Win32 (AMD64)
+-- MySQL dump 10.13  Distrib 5.7.17, for Win64 (x86_64)
 --
--- Host: localhost    Database: e-commerce
+-- Host: 127.0.0.1    Database: e-commerce
 -- ------------------------------------------------------
 -- Server version	5.5.5-10.1.35-MariaDB
 
@@ -16,33 +16,35 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `categorias-marcas`
+-- Table structure for table `usuarios`
 --
 
-DROP TABLE IF EXISTS `categorias-marcas`;
+DROP TABLE IF EXISTS `usuarios`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `categorias-marcas` (
-  `id` int(11) NOT NULL,
-  `categorias_id` int(11) NOT NULL,
-  `marcas_id` int(11) NOT NULL,
-  `create_date` datetime NOT NULL,
-  `update_date` datetime DEFAULT NULL,
-  PRIMARY KEY (`id`),
-  KEY `fk_categorias-marcas_categorias_idx` (`categorias_id`),
-  KEY `fk_categorias-marcas_marcas_idx` (`marcas_id`),
-  CONSTRAINT `fk_categorias-marcas_categorias` FOREIGN KEY (`categorias_id`) REFERENCES `categorias` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  CONSTRAINT `fk_categorias-marcas_marcas` FOREIGN KEY (`marcas_id`) REFERENCES `marcas` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+CREATE TABLE `usuarios` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `usuario` varchar(45) NOT NULL,
+  `email` varchar(50) NOT NULL,
+  `password` varchar(100) NOT NULL,
+  `sexo` varchar(45) NOT NULL,
+  `foto` varchar(200) DEFAULT NULL,
+  `remember_token` varchar(100) DEFAULT NULL,
+  `created_at` datetime DEFAULT NULL,
+  `updated_at` datetime DEFAULT NULL,
+  `domicilio` varchar(45) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `categorias-marcas`
+-- Dumping data for table `usuarios`
 --
 
-LOCK TABLES `categorias-marcas` WRITE;
-/*!40000 ALTER TABLE `categorias-marcas` DISABLE KEYS */;
-/*!40000 ALTER TABLE `categorias-marcas` ENABLE KEYS */;
+LOCK TABLES `usuarios` WRITE;
+/*!40000 ALTER TABLE `usuarios` DISABLE KEYS */;
+INSERT INTO `usuarios` VALUES (8,'Silvia','sadecarvalho@hotmail.com','$2y$10$51q/454gYcsB8x8WNZjnKOWLBcd6P7UTjdwWtiU3ULshzpNPZzPJm','f',NULL,'qbubJBP9pZd02HfjTH9r9swMkrLwCbnluEBbPoBQxVyvkzvSsYVlYD35sAE3',NULL,NULL,NULL);
+/*!40000 ALTER TABLE `usuarios` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
@@ -54,4 +56,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2018-10-25 17:05:23
+-- Dump completed on 2018-12-15 22:21:55

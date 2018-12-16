@@ -1,6 +1,6 @@
--- MySQL dump 10.13  Distrib 5.7.12, for Win32 (AMD64)
+-- MySQL dump 10.13  Distrib 5.7.17, for Win64 (x86_64)
 --
--- Host: localhost    Database: e-commerce
+-- Host: 127.0.0.1    Database: e-commerce
 -- ------------------------------------------------------
 -- Server version	5.5.5-10.1.35-MariaDB
 
@@ -16,33 +16,29 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `productos-categorias`
+-- Table structure for table `categorias`
 --
 
-DROP TABLE IF EXISTS `productos-categorias`;
+DROP TABLE IF EXISTS `categorias`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `productos-categorias` (
+CREATE TABLE `categorias` (
   `id` int(11) NOT NULL,
-  `producto_id` int(11) NOT NULL,
-  `categoria_id` int(11) NOT NULL,
-  `create_date` datetime NOT NULL,
-  `update_date` datetime DEFAULT NULL,
-  PRIMARY KEY (`id`),
-  KEY `test` (`categoria_id`),
-  KEY `fk_productos-categoria_productos_idx` (`producto_id`),
-  CONSTRAINT `fk_productos-categoria_categorias` FOREIGN KEY (`categoria_id`) REFERENCES `categorias` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  CONSTRAINT `fk_productos-categoria_productos` FOREIGN KEY (`producto_id`) REFERENCES `productos` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION
+  `nombre` varchar(45) NOT NULL,
+  `create_at` datetime NOT NULL,
+  `update_at` datetime DEFAULT NULL,
+  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `productos-categorias`
+-- Dumping data for table `categorias`
 --
 
-LOCK TABLES `productos-categorias` WRITE;
-/*!40000 ALTER TABLE `productos-categorias` DISABLE KEYS */;
-/*!40000 ALTER TABLE `productos-categorias` ENABLE KEYS */;
+LOCK TABLES `categorias` WRITE;
+/*!40000 ALTER TABLE `categorias` DISABLE KEYS */;
+INSERT INTO `categorias` VALUES (1,'Electronica','2011-12-18 00:00:00','2011-12-18 00:00:00'),(2,'Aire libre','2011-12-18 00:00:00','2011-12-18 00:00:00'),(3,'Decoracion','2011-12-18 00:00:00','2011-12-18 00:00:00'),(4,'Ropa','2011-12-18 00:00:00','2011-12-18 00:00:00');
+/*!40000 ALTER TABLE `categorias` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
@@ -54,4 +50,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2018-12-11 16:23:41
+-- Dump completed on 2018-12-15 22:21:54
