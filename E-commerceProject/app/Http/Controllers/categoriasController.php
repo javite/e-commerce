@@ -14,7 +14,10 @@ class categoriasController extends Controller
         
         $categorias = Categoria::all();
         $vac2 = compact("categorias");
+
+        $categoria = Categoria::findOrFail($id);
+        $vac3 = compact("categoria");
         
-        return view("home", $vac,$vac2 );
+        return view("home")->with($vac)->with($vac2)->with($vac3);
     }
 }

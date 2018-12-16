@@ -16,30 +16,35 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `pedido`
+-- Table structure for table `users`
 --
 
-DROP TABLE IF EXISTS `pedido`;
+DROP TABLE IF EXISTS `users`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `pedido` (
-  `id` int(11) NOT NULL,
-  `usuario_id` int(11) NOT NULL,
-  `create_date` datetime NOT NULL,
-  `update_date` datetime DEFAULT NULL,
-  PRIMARY KEY (`id`),
-  KEY `fk_pedido_usuarios_idx` (`usuario_id`),
-  CONSTRAINT `fk_pedido_usuarios` FOREIGN KEY (`usuario_id`) REFERENCES `usuarios` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+CREATE TABLE `users` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(45) NOT NULL,
+  `email` varchar(50) NOT NULL,
+  `password` varchar(100) NOT NULL,
+  `sexo` varchar(45) NOT NULL,
+  `foto` varchar(200) DEFAULT NULL,
+  `remember_token` varchar(100) DEFAULT NULL,
+  `created_at` datetime DEFAULT NULL,
+  `updated_at` datetime DEFAULT NULL,
+  `domicilio` varchar(45) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `pedido`
+-- Dumping data for table `users`
 --
 
-LOCK TABLES `pedido` WRITE;
-/*!40000 ALTER TABLE `pedido` DISABLE KEYS */;
-/*!40000 ALTER TABLE `pedido` ENABLE KEYS */;
+LOCK TABLES `users` WRITE;
+/*!40000 ALTER TABLE `users` DISABLE KEYS */;
+INSERT INTO `users` VALUES (8,'Silvia','sadecarvalho@hotmail.com','$2y$10$51q/454gYcsB8x8WNZjnKOWLBcd6P7UTjdwWtiU3ULshzpNPZzPJm','f',NULL,'qbubJBP9pZd02HfjTH9r9swMkrLwCbnluEBbPoBQxVyvkzvSsYVlYD35sAE3',NULL,NULL,NULL),(9,'javier','refugiero@hotmail.com','$2y$10$FHFmt.dE9FIJwFn6.gfk/OREyMwDLiwdB7q9PhRXPhqmgU91kIO/u','m',NULL,'PhUVX2CoHkD7JIzOyp2cIQT8O1VVVfr07qFaKx852Y3Sus1L69Y3ATX3uob8','2018-12-16 13:30:24','2018-12-16 13:30:24','bermejo 33');
+/*!40000 ALTER TABLE `users` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
@@ -51,4 +56,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2018-12-15 22:21:55
+-- Dump completed on 2018-12-16 10:36:13

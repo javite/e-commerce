@@ -16,33 +16,30 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `pedido-producto`
+-- Table structure for table `pedidos`
 --
 
-DROP TABLE IF EXISTS `pedido-producto`;
+DROP TABLE IF EXISTS `pedidos`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `pedido-producto` (
+CREATE TABLE `pedidos` (
   `id` int(11) NOT NULL,
-  `pedido_id` int(11) NOT NULL,
-  `producto_id` int(11) NOT NULL,
-  `create_date` datetime NOT NULL,
-  `update_date` datetime DEFAULT NULL,
+  `usuario_id` int(11) NOT NULL,
+  `create_at` datetime NOT NULL,
+  `update_at` datetime DEFAULT NULL,
   PRIMARY KEY (`id`),
-  KEY `fk_pedido-producto_pedido_idx` (`pedido_id`),
-  KEY `fk_pedido-producto_productos_idx` (`producto_id`),
-  CONSTRAINT `fk_pedido-producto_pedido` FOREIGN KEY (`pedido_id`) REFERENCES `pedido` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  CONSTRAINT `fk_pedido-producto_productos` FOREIGN KEY (`producto_id`) REFERENCES `productos` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION
+  KEY `fk_pedido_usuarios_idx` (`usuario_id`),
+  CONSTRAINT `fk_pedido_usuarios` FOREIGN KEY (`usuario_id`) REFERENCES `users` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `pedido-producto`
+-- Dumping data for table `pedidos`
 --
 
-LOCK TABLES `pedido-producto` WRITE;
-/*!40000 ALTER TABLE `pedido-producto` DISABLE KEYS */;
-/*!40000 ALTER TABLE `pedido-producto` ENABLE KEYS */;
+LOCK TABLES `pedidos` WRITE;
+/*!40000 ALTER TABLE `pedidos` DISABLE KEYS */;
+/*!40000 ALTER TABLE `pedidos` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
@@ -54,4 +51,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2018-12-15 22:21:55
+-- Dump completed on 2018-12-16 10:36:14

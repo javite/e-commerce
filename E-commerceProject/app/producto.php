@@ -22,6 +22,11 @@ class producto extends Model
 
     }
     
+    public function pedidos(){
+
+        return $this->belongsToMany(Pedido::class,'pedidos-productos','producto_id', 'pedido_id');
+    
+    }
 
 
 }

@@ -21,6 +21,7 @@
                 <div class="top-right links">
                     @if (Route::has('login'))
                             @auth
+                                <a href="">Hola {{Auth::user()->name}}!</a>
                                 <form id="logout-form" action="{{ route('logout') }}" method="POST" >
                                             @csrf
                                     <button type="submit" class="logout">Logout</button>
@@ -30,7 +31,6 @@
                                 </div>
                             @else
                                 <a href="{{ route('login') }}">Login</a>
-
                             @if (Route::has('register'))
                                 <a href="{{ route('register') }}">Register</a>
                             @endif

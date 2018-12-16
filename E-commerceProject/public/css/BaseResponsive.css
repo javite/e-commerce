@@ -399,8 +399,9 @@ div.descripcion p {
     color:#007bff;
 }
 
-h4 {
-    padding-left: 3%;
+h4.card-brand {
+    padding-left: 0;
+    color: #b50d0dd6;
 }
 
 footer {
@@ -765,6 +766,16 @@ input.magnifier {
     margin-right: 0;
     background-color: #ffffff;
 }
+.category-title{
+background-color: #f7f7f7;
+padding: 10px;
+color: #545b62;
+}
+.category-title h1{
+margin: 0 auto;
+text-align: center;
+text-transform: uppercase;
+}
 /*DETALLE PRODUCTO*/
 .product-container{
 display: flex;
@@ -824,6 +835,7 @@ font-size: 18px;
 padding: 10px 35px;
 border: 0;
 transition: all 0.5s ease;
+cursor: pointer;
 }
 .product-description{
     margin-top: 10px;
