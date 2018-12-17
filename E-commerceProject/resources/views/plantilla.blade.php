@@ -36,20 +36,21 @@
                             @endif
                             @endauth
                     @endif
-                    
+
                 </div>
         </div>
         <nav class="nav">
             <a href="/"><img class="logo" src="/img/logo.png" alt=""></a>
             <div class="search-container flex-container center">
-                    <form class="flex-container center flex-nowrap" id="searchForm" method="get" action="productos/search">
-                        <input id="search" placeholder="Buscar" type="search" name="q" value="" class="inputField">
+                    <form class="flex-container center flex-nowrap" id="searchForm" method="GET">
+                        <input id="search" placeholder="Buscar" type="search" name="q" value="" class="inputField" action="{{url('buscador')}}">
                         <input class="magnifier" type="image" src="/img/search.svg" value="Buscar">
+
                     </form>
             </div>
         </nav>
-                   
-        <nav class="navbar-nav justify-content-center navbar-expand-md navbar-dark bg-primary">  
+
+        <nav class="navbar-nav justify-content-center navbar-expand-md navbar-dark bg-primary">
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -95,7 +96,7 @@
                 </div>
             </div>
         </div>
-    
+
         <div class="questions fluid-container">
             <div class="questions-container fix-container ">
                 <div class="col-md-4center-text col-xs-12">
@@ -133,7 +134,7 @@
                 </div>
             </div>
         </div>
-    
+
         <div class="bottom fix-container">
             <div class="bottom-container">
                 <div class="col-md-4 col-xs-12 flex-container center">
@@ -180,7 +181,7 @@
                     </div>
                 </div>
             </div>
-    
+
             <div class="fix-container margin-bottom">
                 <div class="bottom-data flex-container center align-items-center">
                     <p><strong>Atención al cliente: <span class="red">+54 11 5263-7400</span></strong> | Lunes a Viernes de 9 a 18 hs.</p>
@@ -189,7 +190,7 @@
                     </a>
                 </div>
             </div>
-    
+
         </div>
     </footer>
 

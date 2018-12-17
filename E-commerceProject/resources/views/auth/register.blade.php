@@ -10,6 +10,8 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <link rel="stylesheet" href="/css/registro.css">
+        <link href="https://fonts.googleapis.com/css?family=Hind:700&amp;subset=latin-ext" rel="stylesheet">
+      <script src="/js/registerJs.js"></script>
       <title>Registro</title>
   </head>
 
@@ -75,10 +77,10 @@
                 @endif
               </div>
               <div class="formulario">
-                  <label class="formulario" for="confirmation">Repetir contraseña:</label>
+                  <label class="password_confirmation" for="confirmation">Repetir contraseña:</label>
                   <br>
 
-                <input class="password" type="password" name="password_confirmation" id="confirmation" value="" placeholder="repetir contraseña" >
+                <input class="password_confirmation" type="password" name="password_confirmation" id="confirmation" value="" placeholder="repetir contraseña" >
 
                 @if($errors->has('password_confirmation'))
                   <span class="help-block">

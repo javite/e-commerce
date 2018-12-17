@@ -108,3 +108,16 @@ button.botones {
     padding-left: 15px;
     padding-right: 15px;
 }
+
+.help-block {
+font-family: 'Hind', sans-serif;
+color: red;
+margin-top: 0px;
+}
+
+div.sexo {
+margin-top: 3px;
+}
+p.sexo {
+  margin-bottom: 3px;
+}

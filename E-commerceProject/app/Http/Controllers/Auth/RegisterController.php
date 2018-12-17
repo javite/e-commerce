@@ -54,6 +54,7 @@ class RegisterController extends Controller
             'usuario' => 'required|string|max:255',
             'email' => 'required|string|email|max:255|unique:users',
             'password' => 'required|string|min:6|confirmed',
+            'password_confirmation' => 'same:password',
             'domicilio' => 'required|string|min:3|max:100',
             'sexo' => 'required|in:m,f',
             'foto' => 'required|file|image'
@@ -62,9 +63,10 @@ class RegisterController extends Controller
         'required' => 'Debe completar el campo :attribute',
         'string'=> 'El :attribute no debe contener numeros',
         'max'=> 'Supera el maximo de caracteres',
+        'same' => 'Cuidado! La confirmación no coincide con la contraseña ingresada',
         'email'=>'El campo :attribute no cumple con el formato de mail',
         'min' => 'El campo :attribute es muy corto',
-        'image'=> 'Solo archivos tipo jpeg, png, bmp, gif, o svg'
+        'image'=> 'Solo archivos tipo jpeg, png, bmp, gif, o svg menores a 2Mb'
       ]);
 }
     /**

@@ -26,6 +26,14 @@ Route::post('login', 'auth\LoginController@postLogin');
 Route::get('pedidos/{id}', 'pedidosController@detalle');
 Route::post('/pedidoAdd', 'pedidosController@add');
 
+Route::get('home/searchredirect', function(){
+/* si el argumento search está vacío regresar a la página anterior */
+   if (empty(Input::get('search'))) return redirect()->back();
+    $search = urlencode(e(Input::get('search')));
+    $route = "home/search/$search";
+    return redirect($route);
+});
+Route::get("home/search/{search}", 'buscadorController@buscarPorBuscador');
+
 
 Auth::routes();
-
