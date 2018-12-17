@@ -25,5 +25,17 @@ class productosController extends Controller
         return view("detalleProducto", $vac,$vac2 );
       }
 
+      public function buscar(Request $req) {
+        $buscar = $req["buscador"];
+        $productos = Producto::where("nombre", "like", "%$buscar%")
+          ->orderBy("nombre")
+          ->get();
+        
+        $vac = compact("productos");
+        $categorias = Categoria::all();
+        $vac2 = compact("categorias");
+        return view("home", $vac,$vac2);
+      }
+
 
 }

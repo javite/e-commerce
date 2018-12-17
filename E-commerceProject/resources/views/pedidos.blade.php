@@ -7,8 +7,8 @@
 <div class="detail-container">
     <div class="product-container">
         <ul>
-            @foreach ($pedido->productos as $producto)
-                <li>{{$producto->nombre}}{{" $"}}{{$producto->precio}}</li>
+            @foreach ($pedidos as $pedido)
+                <li>Pedido: {{$pedido->id}}</li>
             @endforeach
         </ul>
     </div>  

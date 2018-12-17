@@ -21,7 +21,7 @@
                 <div class="top-right links">
                     @if (Route::has('login'))
                             @auth
-                                <a href="">Hola {{Auth::user()->name}}!</a>
+                                <p class="saludo">Hola {{Auth::user()->name}}!</p>
                                 <form id="logout-form" action="{{ route('logout') }}" method="POST" >
                                             @csrf
                                     <button type="submit" class="logout">Logout</button>
@@ -42,11 +42,11 @@
         <nav class="nav">
             <a href="/"><img class="logo" src="/img/logo.png" alt=""></a>
             <div class="search-container flex-container center">
-                    <form class="flex-container center flex-nowrap" id="searchForm" method="GET">
-                        <input id="search" placeholder="Buscar" type="search" name="q" value="" class="inputField" action="{{url('buscador')}}">
-                        <input class="magnifier" type="image" src="/img/search.svg" value="Buscar">
-
-                    </form>
+                <form class="flex-container center flex-nowrap" id="searchForm" method="GET" action="/search">
+                    @csrf
+                    <input type="search" id="search" placeholder="Buscar" name="buscador" value="" class="inputField" >
+                    <input type="image" class="magnifier"  src="/img/search.svg" value="">
+                </form>
             </div>
         </nav>
 
@@ -54,7 +54,7 @@
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            <div class="collapse container navbar-collapse" id="navbarNavAltMarkup">
+            <div class="collapse container center navbar-collapse" id="navbarNavAltMarkup">
                 <div class="navbar-nav">
                     @foreach($categorias as $categoria)
                     <a class="nav-item nav-link active" href="/categoria/{{$categoria->id}}">{{$categoria->nombre}}</a>

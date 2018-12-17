@@ -11,10 +11,10 @@ use auth;
 class pedidosController extends Controller
 {
    
-    public function detalle($id){
+    public function detalle(){
 
-        $pedido = Pedido::findOrFail($id); // hace un select * from tabla del modelo.
-        $vac = compact("pedido");
+        $pedidos = Pedido::all(); // hace un select * from tabla del modelo.
+        $vac = compact("pedidos");
         $categorias = Categoria::all();
         $vac2 = compact("categorias");
         return view("pedidos", $vac, $vac2);
@@ -22,6 +22,9 @@ class pedidosController extends Controller
     }
 
     public function add(Request $req){
+        if (!Auth::check()) {
+            return redirect("/login");
+        }
         $pedido = new Pedido();
         // $pedido->producto->id = $req["id"];
         $pedido->id = 1;

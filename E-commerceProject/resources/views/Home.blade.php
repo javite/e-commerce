@@ -9,6 +9,7 @@ REGAL.AR
 
     @if(isset($categoria))
         <div class="category-title"><h1>{{$categoria->nombre}}</h1></div>
+ 
     @endif
     <section class="section-articulos container">
     @foreach ($productos as $producto)

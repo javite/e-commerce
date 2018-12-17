@@ -23,17 +23,17 @@ Route::get('categoria/{id}','categoriasController@buscarPorID'); // trae todas l
 Route::get('detalleProducto/{id}','productosController@detalle'); //trae un producto con ese ID
 Route::get('login', 'auth\LoginController@showLogin');
 Route::post('login', 'auth\LoginController@postLogin');
-Route::get('pedidos/{id}', 'pedidosController@detalle');
+Route::get('/cart', 'pedidosController@detalle');
 Route::post('/pedidoAdd', 'pedidosController@add');
 
-Route::get('home/searchredirect', function(){
+// Route::get('home/searchredirect', function(){
 /* si el argumento search está vacío regresar a la página anterior */
-   if (empty(Input::get('search'))) return redirect()->back();
-    $search = urlencode(e(Input::get('search')));
-    $route = "home/search/$search";
-    return redirect($route);
-});
-Route::get("home/search/{search}", 'buscadorController@buscarPorBuscador');
-
+//    if (empty(Input::get('search'))) return redirect()->back();
+//     $search = urlencode(e(Input::get('search')));
+//     $route = "home/search/$search";
+//     return redirect($route);
+// });
+// Route::get("home/search/{search}", 'buscadorController@buscarPorBuscador');
+Route::get("/search", 'productosController@buscar');
 
 Auth::routes();
