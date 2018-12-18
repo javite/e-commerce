@@ -34,7 +34,7 @@ CREATE TABLE `users` (
   `updated_at` datetime DEFAULT NULL,
   `domicilio` varchar(45) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -43,7 +43,7 @@ CREATE TABLE `users` (
 
 LOCK TABLES `users` WRITE;
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
-INSERT INTO `users` VALUES (8,'Silvia','sadecarvalho@hotmail.com','$2y$10$51q/454gYcsB8x8WNZjnKOWLBcd6P7UTjdwWtiU3ULshzpNPZzPJm','f',NULL,'qbubJBP9pZd02HfjTH9r9swMkrLwCbnluEBbPoBQxVyvkzvSsYVlYD35sAE3',NULL,NULL,NULL),(9,'javier','refugiero@hotmail.com','$2y$10$FHFmt.dE9FIJwFn6.gfk/OREyMwDLiwdB7q9PhRXPhqmgU91kIO/u','m',NULL,'PhUVX2CoHkD7JIzOyp2cIQT8O1VVVfr07qFaKx852Y3Sus1L69Y3ATX3uob8','2018-12-16 13:30:24','2018-12-16 13:30:24','bermejo 33');
+INSERT INTO `users` VALUES (8,'Silvia','sadecarvalho@hotmail.com','$2y$10$51q/454gYcsB8x8WNZjnKOWLBcd6P7UTjdwWtiU3ULshzpNPZzPJm','f',NULL,'qbubJBP9pZd02HfjTH9r9swMkrLwCbnluEBbPoBQxVyvkzvSsYVlYD35sAE3',NULL,NULL,NULL),(9,'pablo','refugiero@hotmail.com','$2y$10$FHFmt.dE9FIJwFn6.gfk/OREyMwDLiwdB7q9PhRXPhqmgU91kIO/u','m',NULL,'VcuWypin2bGqpR3tZgKHYJ3vtWoSbchG8GWaDMuN97F9OzwloLpd2n5ONsEn','2018-12-16 13:30:24','2018-12-16 13:30:24','bermejo 33'),(10,'javier','DH@hotmail.com','$2y$10$RASmWBTShLS6oYqNIQW4HOecLJG6Z4tqPQ9bHy9EIJbA7/tp1f7he','m',NULL,'JvNHVtfKQ1C8FVBPAQibYQN0os5CcBxyOvEOVcLJIZGWZSKhEHnqa1wHb5A6','2018-12-16 20:14:14','2018-12-16 20:14:14','wewee');
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -56,4 +56,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2018-12-16 10:36:13
+-- Dump completed on 2018-12-16 20:17:31

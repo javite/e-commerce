@@ -10,17 +10,16 @@ class pedido extends Model
     public $table = "pedidos";
     public $guarded = [];
 
-    public function productos(){
+    public function producto(){
 
-        return $this->belongsToMany(Producto::class,'pedidos-productos', 'pedido_id','producto_id');
+        return $this->belongsTo(producto::class,'producto_id');
     
     }
 
     public function usuario(){
 
-        return $this->belongsTo(usuario::class,'user_id');
+        return $this->belongsTo(usuario::class,'usuario_id');
 
     }
-
 
 }

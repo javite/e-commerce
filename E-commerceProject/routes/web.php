@@ -18,8 +18,9 @@ Route::get('categoria/{id}','categoriasController@buscarPorID'); // trae todas l
 Route::get('detalleProducto/{id}','productosController@detalle'); //trae un producto con ese ID
 Route::get('login', 'auth\LoginController@showLogin');
 Route::post('login', 'auth\LoginController@postLogin');
-Route::get('/cart', 'pedidosController@detalle');
+Route::get('/cart', 'pedidosController@cart');
 Route::post('/pedidoAdd', 'pedidosController@add');
+Route::post('/comprar', 'pedidosController@buy');
 Route::get("/search", 'productosController@buscar');
 
 Auth::routes();

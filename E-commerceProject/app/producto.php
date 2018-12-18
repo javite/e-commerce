@@ -3,7 +3,6 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
-use app\categoria;
 
 class producto extends Model
 {
@@ -24,7 +23,7 @@ class producto extends Model
     
     public function pedidos(){
 
-        return $this->belongsToMany(Pedido::class,'pedidos-productos','producto_id', 'pedido_id');
+        return $this->hasMany(producto::class,'producto_id');
     
     }
 

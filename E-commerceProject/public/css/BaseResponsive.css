@@ -58,6 +58,11 @@ header {
     display: inline;
 }
 
+.saludo img {
+    height: 30px;
+    width: auto;
+}
+
 .banner-navidad {
     width: 100%;
     height: 100px;
@@ -770,7 +775,12 @@ footer {
     color: white;
     padding-right: 10px;
 }
-
+.top-right a:first-child {
+   border-right: 1px solid white;
+}
+.cart a{
+    border-right:0!important;
+}
 .top {
     height: 40px;
     background-color: #007bff;

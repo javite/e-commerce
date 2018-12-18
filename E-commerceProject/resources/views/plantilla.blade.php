@@ -21,9 +21,9 @@
                 <div class="top-right links">
                     @if (Route::has('login'))
                             @auth
-
+                            <!-- margin-left:"5px" height="35px" storage/imagenes/-->
                                 <p class="saludo">
-                                  <img margin-left:"5px" height="35px" src="storage/imagenes/{{Auth::user()->foto}}" >
+                                  <img src="storage/imagenes/{{Auth::user()->foto}}" >
                                  Hola {{Auth::user()->name}}!
                                  </p>
                                 <form id="logout-form" action="{{ route('logout') }}" method="POST" >
