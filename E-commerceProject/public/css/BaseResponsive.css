@@ -737,13 +737,13 @@ footer {
 .submit-mail {
     font-family: 'Montserrat', sans-serif;
     font-weight: 500;
-    font-size: 1em;
+    font-size: 13px;
     background-color: #007bff;
     color: white;
     border: 0;
     height: 31px;
     max-width: 105px;
-    width: 30%;
+    width: 25%;
 }
 
 .question {

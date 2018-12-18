@@ -174,6 +174,7 @@
                         <h3 class="bottom-title">ENTERATE DE NUESTRAS NOVEDADES</h3>
                         <P class="us-link">Recibí alertas de descuentos y nuevos productos</P>
                         <form class="form-email flex-container space-between" action="/home" method="post" name="form">
+                            {{ csrf_field() }}
                             <input type="email" name="email" class="email" placeholder="Ingresá tu email">
                             <button type="submit" class="submit-mail">ENVIAR</button>
                         </form>
