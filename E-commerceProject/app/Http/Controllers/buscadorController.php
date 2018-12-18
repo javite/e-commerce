@@ -28,26 +28,14 @@ class buscadorController extends Controller
 //               ->orderBy('id', 'desc')
 //               ->get();
 
-//       if (count($busqueda) == 0){
-//           return View('home.search')
-//           ->with('message', 'No hay resultados que mostrar')
-//           ->with('search', $search);
-//       } else{
-//           return View('home.search')
-//           ->with('comments', $busqueda)
-//           ->with('search', $search);
-//       }
-//   }
-public function buscarPorBuscador($search){
-    $search = urldecode($search);
-    $productos = Producto::select()
-            ->where('nombre', 'LIKE', '%'.$search.'%')
-            ->orderBy('id', 'desc')
-            ->get();
-    $var = compact('productos');
-    $categorias = Categoria::all();
-    $vac2 = compact("categorias");
-
-    return View('home', $var, $vac2);
-    }
+      if (count($busqueda) == 0){
+          return View('home.search')
+          ->with('message', 'No hay resultados que mostrar')
+          ->with('search', $search);
+      } else{
+          return View('home.search')
+          ->with('productos', $busqueda)
+          ->with('search', $search);
+      }
+  }
 }

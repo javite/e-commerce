@@ -21,7 +21,11 @@
                 <div class="top-right links">
                     @if (Route::has('login'))
                             @auth
-                                <p class="saludo">Hola {{Auth::user()->name}}!</p>
+
+                                <p class="saludo">
+                                  <img margin-left:"5px" height="35px" src="storage/imagenes/{{Auth::user()->foto}}" >
+                                 Hola {{Auth::user()->name}}!
+                                 </p>
                                 <form id="logout-form" action="{{ route('logout') }}" method="POST" >
                                             @csrf
                                     <button type="submit" class="logout">Logout</button>
@@ -142,13 +146,13 @@
                         <h3 class="bottom-title">NOSOTROS</h3>
                         <ul>
                             <li>
-                                <a class="us-link" href="/quienes-somos">Quienes Somos</a>
+                                <a class="us-link" href="/home">Quienes Somos</a>
                             </li>
                             <li>
-                                <a class="us-link" href="/contact">Trabaja con Nosotros</a>
+                                <a class="us-link" href="/home">Trabaja con Nosotros</a>
                             </li>
                             <li>
-                                <a class="us-link" href="/contact">Contacto</a>
+                                <a class="us-link" href="/home">Contacto</a>
                             </li>
                         </ul>
                     </div>
@@ -169,7 +173,7 @@
                     <div class="us-container">
                         <h3 class="bottom-title">ENTERATE DE NUESTRAS NOVEDADES</h3>
                         <P class="us-link">Recibí alertas de descuentos y nuevos productos</P>
-                        <form class="form-email flex-container space-between" action="" method="post" name="form">
+                        <form class="form-email flex-container space-between" action="/home" method="post" name="form">
                             <input type="email" name="email" class="email" placeholder="Ingresá tu email">
                             <button type="submit" class="submit-mail">ENVIAR</button>
                         </form>
