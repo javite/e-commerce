@@ -16,29 +16,36 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `categorias`
+-- Table structure for table `pedidos`
 --
 
-DROP TABLE IF EXISTS `categorias`;
+DROP TABLE IF EXISTS `pedidos`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `categorias` (
-  `id` int(11) NOT NULL,
-  `nombre` varchar(45) NOT NULL,
-  `create_at` datetime NOT NULL,
-  `update_at` datetime DEFAULT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+CREATE TABLE `pedidos` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `usuario_id` int(11) NOT NULL,
+  `producto_id` int(11) NOT NULL,
+  `estado` int(11) NOT NULL DEFAULT '0',
+  `created_at` datetime DEFAULT NULL,
+  `updated_at` datetime DEFAULT NULL,
+  `cantidad` int(11) NOT NULL DEFAULT '1',
+  PRIMARY KEY (`id`),
+  KEY `fk_pedido_usuarios_idx` (`usuario_id`),
+  KEY `fk_pedido_productos_idx` (`producto_id`),
+  CONSTRAINT `fk_pedido_productos` FOREIGN KEY (`producto_id`) REFERENCES `productos` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  CONSTRAINT `fk_pedido_usuarios` FOREIGN KEY (`usuario_id`) REFERENCES `users` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `categorias`
+-- Dumping data for table `pedidos`
 --
 
-LOCK TABLES `categorias` WRITE;
-/*!40000 ALTER TABLE `categorias` DISABLE KEYS */;
-INSERT INTO `categorias` VALUES (1,'Electronica','2011-12-18 00:00:00','2011-12-18 00:00:00'),(2,'Aire libre','2011-12-18 00:00:00','2011-12-18 00:00:00'),(3,'Decoracion','2011-12-18 00:00:00','2011-12-18 00:00:00'),(4,'Indumentaria','2011-12-18 00:00:00','2011-12-18 00:00:00');
-/*!40000 ALTER TABLE `categorias` ENABLE KEYS */;
+LOCK TABLES `pedidos` WRITE;
+/*!40000 ALTER TABLE `pedidos` DISABLE KEYS */;
+INSERT INTO `pedidos` VALUES (1,11,4,1,'2018-12-18 22:59:15','2018-12-18 23:25:00',1),(2,11,2,1,'2018-12-18 23:01:18','2018-12-18 23:25:00',2),(3,11,0,1,'2018-12-18 23:29:23','2018-12-18 23:30:17',2),(4,11,2,1,'2018-12-18 23:29:46','2018-12-18 23:30:17',2),(5,11,5,1,'2018-12-18 23:30:56','2018-12-18 23:33:05',2),(6,11,3,1,'2018-12-18 23:31:41','2018-12-18 23:33:05',1);
+/*!40000 ALTER TABLE `pedidos` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
@@ -50,4 +57,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2018-12-16 20:17:31
+-- Dump completed on 2018-12-18 20:39:53

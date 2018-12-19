@@ -9,13 +9,14 @@
                 <h1>CARRITO</h1>
             </div>
             @if(sizeof($pedidos)>0)
-            <table class="table">
+            <div class="table-responsive">
+            <table class="table table-striped">
                 <thead>
                     <tr>
                         <th scope="col">SKU</th>
                         <th scope="col">MARCA</th>
                         <th scope="col">MODELO</th>
-                        <th scope="col">CANTIDAD</th>
+                        <th scope="col">CANT.</th>
                         <th scope="col">PRECIO</th>
                     </tr>
                 </thead>
@@ -42,6 +43,7 @@
                     {{ csrf_field() }}
                     <button class="btn btn-success float-right" type="submit">COMPRAR</button>
                 </form>
+            </div>
             @else
                 <h3 class="float-center">No compraste nada todavia</h3>
             @endif

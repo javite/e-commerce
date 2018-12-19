@@ -61,6 +61,7 @@ header {
 .saludo img {
     height: 30px;
     width: auto;
+    border-radius: 100%;
 }
 
 .banner-navidad {
@@ -238,6 +239,16 @@ input:-moz-placeholder {
     color: #888
 }
 
+.table td,
+.table th {
+    padding: .3rem!important;
+}
+
+.table {
+    font-size: 16px;
+    font-family: 'Montserrat';
+}
+
 
 /****************
  barra de filtros
@@ -255,10 +266,11 @@ section.divselec {
     border: 1px solid lightgray;
 }
 
-input {
+
+/* input {
     width: auto;
     padding-left: 2px;
-}
+} */
 
 .buttonOpciones {
     margin-top: 10px;
@@ -348,6 +360,14 @@ article {
     background-color: #e7eaea;
 }
 
+.card-body p {
+    font-family: 'Montserrat';
+}
+
+.card-title {
+    font-family: 'Montserrat';
+}
+
 .card:hover .comprar {
     opacity: 1;
 }
@@ -389,6 +409,7 @@ div.imagen img {
 a.zoom {
     text-decoration: none;
     font-size: 15px;
+    font-family: 'Montserrat';
     text-align: center;
     border-radius: 5%;
     color: white;
@@ -428,11 +449,13 @@ div.descripcion p {
 
 .valor {
     color: #007bff;
+    font-family: 'Montserrat';
 }
 
 h4.card-brand {
     padding-left: 0;
     color: #b50d0dd6;
+    font-family: 'Montserrat';
 }
 
 footer {
@@ -742,13 +765,17 @@ footer {
 .submit-mail {
     font-family: 'Montserrat', sans-serif;
     font-weight: 500;
-    font-size: 13px;
+    font-size: 12px;
     background-color: #007bff;
     color: white;
     border: 0;
     height: 31px;
     max-width: 105px;
-    width: 25%;
+    width: 27%;
+}
+
+.email {
+    width: 70%;
 }
 
 .question {
@@ -769,18 +796,23 @@ footer {
 .top-right {
     height: 100%;
     padding-top: 6px;
+    font-size: 13px;
+    font-family: 'Montserrat';
 }
 
 .top-right a {
     color: white;
     padding-right: 10px;
 }
+
 .top-right a:first-child {
-   border-right: 1px solid white;
+    border-right: 1px solid white;
 }
-.cart a{
-    border-right:0!important;
+
+.cart a {
+    border-right: 0!important;
 }
+
 .top {
     height: 40px;
     background-color: #007bff;
@@ -790,6 +822,13 @@ footer {
     padding-right: 10px;
     padding-left: 10px;
     border-bottom: 1px solid #94bfecb8;
+}
+
+.float-center {
+    margin-top: 20px;
+    text-align: center;
+    font-family: "Montserrat";
+    color: #c10707;
 }
 
 .search-container {
@@ -843,6 +882,11 @@ input.magnifier {
     margin: 0 auto;
     text-align: center;
     text-transform: uppercase;
+    font-family: 'Montserrat';
+}
+
+.navbar-nav {
+    font-family: 'Montserrat';
 }
 
 

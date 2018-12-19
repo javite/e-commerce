@@ -16,31 +16,29 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `pedidos`
+-- Table structure for table `marcas`
 --
 
-DROP TABLE IF EXISTS `pedidos`;
+DROP TABLE IF EXISTS `marcas`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `pedidos` (
+CREATE TABLE `marcas` (
   `id` int(11) NOT NULL,
-  `usuario_id` int(11) NOT NULL,
-  `created_at` datetime NOT NULL,
-  `updated_at` datetime DEFAULT NULL,
-  PRIMARY KEY (`id`),
-  KEY `fk_pedido_usuarios_idx` (`usuario_id`),
-  CONSTRAINT `fk_pedido_usuarios` FOREIGN KEY (`usuario_id`) REFERENCES `users` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION
+  `nombre` varchar(45) NOT NULL,
+  `create_at` datetime NOT NULL,
+  `update_at` datetime DEFAULT NULL,
+  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `pedidos`
+-- Dumping data for table `marcas`
 --
 
-LOCK TABLES `pedidos` WRITE;
-/*!40000 ALTER TABLE `pedidos` DISABLE KEYS */;
-INSERT INTO `pedidos` VALUES (0,8,'2018-12-16 23:02:12','2018-12-16 23:02:12'),(1,10,'2018-12-16 23:06:44','2018-12-16 23:06:44');
-/*!40000 ALTER TABLE `pedidos` ENABLE KEYS */;
+LOCK TABLES `marcas` WRITE;
+/*!40000 ALTER TABLE `marcas` DISABLE KEYS */;
+INSERT INTO `marcas` VALUES (1,'Apple','2011-12-18 00:00:00','2011-12-18 00:00:00'),(2,'Bose','2011-12-18 00:00:00','2011-12-18 00:00:00'),(3,'Nikon','2011-12-18 00:00:00','2011-12-18 00:00:00'),(4,'Sony','2011-12-18 00:00:00','2011-12-18 00:00:00'),(5,'Adidas','2011-12-18 00:00:00','2011-12-18 00:00:00'),(6,'Montagne','2011-12-18 00:00:00','2011-12-18 00:00:00'),(7,'Summer Fun','2011-12-18 00:00:00','2011-12-18 00:00:00'),(8,'Furniture One','2011-12-18 00:00:00','2011-12-18 00:00:00'),(9,'Samsung','2011-12-18 00:00:00','2011-12-18 00:00:00'),(10,'Dressup','2011-12-18 00:00:00','2011-12-18 00:00:00'),(11,'Levis','2011-12-18 00:00:00','2011-12-18 00:00:00'),(12,'Koux','2011-12-18 00:00:00','2011-12-18 00:00:00'),(13,'Deco Art','2011-12-18 00:00:00','2011-12-18 00:00:00'),(14,'Iluminarte','2011-12-18 00:00:00','2011-12-18 00:00:00'),(15,'Ripcurl','2011-12-18 00:00:00','2011-12-18 00:00:00');
+/*!40000 ALTER TABLE `marcas` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
@@ -52,4 +50,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2018-12-16 20:17:32
+-- Dump completed on 2018-12-18 20:39:52

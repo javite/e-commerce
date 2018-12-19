@@ -1,6 +1,6 @@
--- MySQL dump 10.13  Distrib 5.7.17, for Win64 (x86_64)
+-- MySQL dump 10.13  Distrib 5.7.12, for Win32 (AMD64)
 --
--- Host: 127.0.0.1    Database: e-commerce
+-- Host: localhost    Database: e-commerce
 -- ------------------------------------------------------
 -- Server version	5.5.5-10.1.35-MariaDB
 
@@ -58,4 +58,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2018-12-18 20:39:52
+-- Dump completed on 2018-12-19 15:11:06
